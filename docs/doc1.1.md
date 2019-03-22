@@ -5,11 +5,11 @@ sidebar_label: Part 1 (RDF to QA)
 ---
 
 The key requirement for QAnswer is the RDF model that you provide for indexing. RDF is a flexible data model and can be used in many different ways. QAnswer
-trys to make the weakest assumptions possible on the RDF dataset it can query.
+tries to make the weakest assumptions possible on the RDF dataset it can query.
 
 In this tutorial we are going to make a Question Answering (QA) system on top of a cocktail KB that can be found [here](/dump.nt). Here are some lines
 extracted from the cocktail KB and describing a cocktail called "Margerita" or "Upside Down Margarita". Moreover the snippet contains the information that the
-cocktails contains "Cointreau", "Tequilla" and "Lime juice":
+cocktails contains "Cointreau", "Tequila" and "Lime juice":
 
 ```
 PREFIX vsw: <http://vocabulary.semantic-web.at/cocktails>
@@ -27,7 +27,7 @@ vsw:2d85fb1b-96cb-4c48-8df5-707032f34e71  rdf:type vswo:Cocktail
                                           vswo:consists-of vsw:88f5de3d-3de4-4a2f-9523-50bc7bb06600 .
 vswo:Cocktail                             rdfs:label "Cocktail"@en .
 vsw:1439e6c3-a155-4c80-8a5d-723453b4d17e  rdfs:label "Cointreau"@en .
-vsw:7dede323-e986-4417-b723-c9c7a7fe82ba  rdfs:label "Tequilla"@en .
+vsw:7dede323-e986-4417-b723-c9c7a7fe82ba  rdfs:label "Tequila"@en .
 vsw:88f5de3d-3de4-4a2f-9523-50bc7bb06600  rdfs:label "Lime juice"@en .
 vswo:consists-of                          rdfs:label "consists of"@en ;
                                           rdfs:label "contains"@en ;
