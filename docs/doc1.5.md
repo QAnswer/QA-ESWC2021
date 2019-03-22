@@ -36,4 +36,6 @@ After clicking on "Train" the system will create a model that adapts to your dat
 
 <img src="/img/screenshots/EvaluationAfter.png" width="80%">
 
+Note that the model will generalize also over questions you didn't ask.
+
 Now you learned how to give feedback to the system and how this feedback can be used to adapt QAnswer to your dataset.
