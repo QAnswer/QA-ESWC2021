@@ -7374,7 +7374,10 @@ _:node1cqltl497x5 <http://schema.semantic-web.at/sparql/1.0/list/orderedCollecti
 <http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2002/07/owl#inverseOf> <http://vocabulary.semantic-web.at/cocktail-ontology/is-part-of> .
 <http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> .
 <http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocabulary.semantic-web.at/cocktail-ontology/Ingredients> .
-<http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#label> "consists of" .
+<http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#label> "consists of"@en .
+<http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#label> "ingredient"@en .
+<http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#label> "made up"@en .
+<http://vocabulary.semantic-web.at/cocktail-ontology/consists-of> <http://www.w3.org/2000/01/rdf-schema#label> "contain"@en .
 <http://vocabulary.semantic-web.at/cocktail-ontology/iba> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocabulary.semantic-web.at/cocktail-ontology/iba> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> .
 <http://vocabulary.semantic-web.at/cocktail-ontology/iba> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Resource> .

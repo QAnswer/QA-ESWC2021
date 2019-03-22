@@ -5,6 +5,7 @@ sidebar_label: Part 3 (Upload and index)
 ---
 
 Now you are ready to upload your first dataset. On your [profile page](https://qanswer-frontend.univ-st-etienne.fr/user/profile) click on "Add dataset".
+The cocktail dataset can be downloaded [here](/dump.nt).
 
 ![Profile0](/img/screenshots/Profile0.png)
 
@@ -21,15 +22,5 @@ serdi -i ntriples -o ntriples dump.nt > dump_clean.nt
 
 
 After uploading the dataset, it will appear in your profile.
-
-![Profile1](/img/screenshots/Profile1.png)
-
-A flag will indicate that it is not indexed yet. To index the dataset click on index. When the
-indexing process terminated succesfully then the flag will turn to "True".
-
-![Profile2](/img/screenshots/Profile2.png)
-
-
-![Datasets](/img/screenshots/Datasets.png)
 
 The dataset is now ready to be queried!

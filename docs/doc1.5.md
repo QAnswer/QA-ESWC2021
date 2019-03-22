@@ -4,20 +4,15 @@ title: Tutorial: Feedback and Train
 sidebar_label: Part 5 (Feedback and train)
 ---
 
-Each time you ask a question the system generate interpretations and decides if to show the top interpretation or not. If the system decides not show the top
-generated interpretation this looks like this:
+Each time you ask a question the system generate interpretations and computes a confidence. A list of different interpretations can be show by clicking on
+ "SPARQL List". The confidence is shown in the bar at the top left. The system believes the answer is correct if the confidence
+ is bigger than 50% and wrong if it is lower than 50%.
 
-<img src="/img/screenshots/No_Interpretation.png" width="80%">
+By using the feedback functionality, i.e. by replaying to the question: "Is this the right answer? Yes No", the system can learn to choose the right interpretation
+and correctly compute the confidence.
 
-By clicking on "Direct Answer" the result of the top generated interpretation is shown:
-
-<img src="/img/screenshots/No_Interpretation2.png" width="80%">
-
-In this case the result is correct. By using the feedback functionality, i.e. by replaying to the question: "Is this the right answer? Yes", the system can
- remember this example.
-
-When asking "Give me all cocktails?" as a response "Cocktail" is given, i.e. so the system understood that we search for general information about "Cocktail",
-and would correspond to the question "What is a Cocktail?". By clicking on "SPARQL List" all generated interpretations can be shown:
+When asking "Give me all cocktails?" as a response "Cocktail" is given, i.e. the system understood that we search for general information about "Cocktail" which
+ would correspond to the question "What is a Cocktail?". By clicking on "SPARQL List" all generated interpretations can be shown:
 
 <img src="/img/screenshots/SparqlList.png" width="80%">
 
@@ -28,7 +23,11 @@ In particular the second returns all things that are of type "Cocktail". This is
 Which gives a long list of cocktails but with low confidence. By using the feedback functionality, i.e. by replaying to the question: "Is this the right answer? Yes",
 the system will save the given example.
 
-After asking a set of questions, and by giving feedback you will have created a training set. By clicking on "Training Evaluation" in your
+After asking a set of questions, and by giving feedback you will have created a training set. A training set for the cocktail dataset can be downloaded
+[here](/questions_cocktail.nt). It can be uploaded from the [profile page](https://qanswer-frontend.univ-st-etienne.fr/user/profile) using the "Upload Questions" button.
+
+
+By clicking on "Training Evaluation" in your
 [profile](https://qanswer-frontend.univ-st-etienne.fr/user/profile) you have an overview of how the system performs on the questions you gave feedback.
 
 <img src="/img/screenshots/Evaluation.png" width="80%">

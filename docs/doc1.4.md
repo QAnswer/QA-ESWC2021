@@ -9,8 +9,7 @@ under your profile.
 
 ![Profile2](/img/screenshots/Profile2.png)
 
-For the "cocktails" dataset some example questions are already provided. This is not the case for another dataset, but by knowing your dataset you
-will be able to formulate some first questions. Here some examples:
+For the "cocktails" dataset you could ask for example: "What is a Margerita?" or "What are the ingredients of Margerita?":
 
 ![Result_Parial0](/img/screenshots/Result_Partial0.png)
 
