@@ -6,7 +6,8 @@ sidebar_label: Part 6 (Contextual information)
 
 Up to now the result was always given by the "rdfs:label". But in an RDF dataset there are potentially many contextual information that can be shown like
 descriptions, images, maps and videos. To allow QAnswer to display this contextual information your ontology vocabulary has to be aligned by the one used by
-QAnswer. This is necessary since there is no common vocabulary to express this type of information in the Semantic Web Community. QAnswer is using the properties
+QAnswer. This is necessary since there are different proposed vocabulary to express this type of information in the Semantic Web Community and no one became
+a standard. QAnswer is using the properties
 used by Wikidata. So let's start.
 
 The main properties to align are the following:
@@ -32,7 +33,7 @@ In the case of the cocktail Knowledge Base the following properties can be align
 2) <http://vocabulary.semantic-web.at/cocktail-ontology/image> to <http://www.wikidata.org/prop/direct/P18>
 3) <http://www.w3.org/2004/02/skos/core#exactMatch> to <http://qanswer.eu/dbpedia>
 
-The cocktail Knowledge Base with where the above URIs are substituted can be downloaded [here](/dump_align.nt). The updated file can be uploaded and indexd as
+The cocktail Knowledge Base with where the above URIs are substituted can be downloaded [here](/cocktails_align.nt). The updated file can be uploaded and indexd as
 explained in [Part 3](/docs/doc1.3). With these substitutions we get the following result:
 
 <img src="/img/screenshots/Result_Final0.png" width="80%">

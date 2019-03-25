@@ -1213,7 +1213,8 @@
 <http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> .
 <http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Bob and Rita"@en .
-<http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Margarita (cocktail)"@en .
+<http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Margarita"@en .
+<http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Marguerita"@en .
 <http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Margarita (drink)"@en .
 <http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Margerita"@en .
 <http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71> <http://www.w3.org/2004/02/skos/core#altLabel> "Upside Down Margarita"@en .
