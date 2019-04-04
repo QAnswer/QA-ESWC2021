@@ -28,16 +28,16 @@ const users = [
 
 
 const siteConfig = {
-  title: 'QAnswer', // Title for your website.
-  tagline: 'Delivering direct answers!',
-  url: 'https://qanswer.eu', // Your website URL
+  title: 'BaguetteMyTrip', // Title for your website.
+  tagline: 'Make you trip in a click!',
+  url: 'https://baguetteMyTrip.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'QAnswer',
+  projectName: 'BaguetteMyTrip',
   //organizationName: 'QAnswer',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
@@ -45,9 +45,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc0', label: 'Docs'},
-    {doc: 'api1', label: 'API'},
-    {page: 'help', label: 'Help'},
+    //{doc: 'doc0', label: 'Docs'},
+    //{doc: 'api1', label: 'API'},
+    //{page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
 

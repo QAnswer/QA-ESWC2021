@@ -2,7 +2,7 @@
   "docs": {
     "Introduction": ["doc0"],
     "Tutorial (UI)": ["doc1.1", "doc1.2", "doc1.3", "doc1.4", "doc1.5", "doc1.6"],
-    "Tutorial (API)": ["doc2"],
+    "Tutorial (API)": ["doc2.1","doc2.2","doc2.3","doc2.4","doc2.5","doc2.6"],
     "Resources": ["doc3"]
   }
 }
