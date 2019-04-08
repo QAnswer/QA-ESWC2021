@@ -4,6 +4,7 @@ title: Tutorial: Upload and index
 sidebar_label: Part 3 (Upload and index)
 ---
 
+<<<<<<< HEAD
 Now you are ready to upload your first dataset. The cocktail dataset can be downloaded [here](/cocktails.nt). To upload a new dataset you can use one of the following code snippets:
 
 <!--DOCUSAURUS_CODE_TABS-->
@@ -47,13 +48,12 @@ $.ajax(settings).done(function (response) {
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-
-
 IMPORTANT: The dataset must be in N-Triple format and must be syntactically correct. You can both check and clean a file using [serdi](https://drobilla.net/software/serd)
 
 ```
 serdi -i ntriples -o ntriples dump.nt > dump_clean.nt
 ```
+
 
 After uploading the dataset it needs to be indexed. This can be done with the following code snippets:
 
