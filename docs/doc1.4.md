@@ -17,7 +17,7 @@ and
 
 ![Result_Parial1](/img/screenshots/Result_Partial1.png)
 
-Note that for now there is no contextual information attached to the answers, like descriptions, external links, maps, images and videos. How this can be achieved
+Note that for now there is no contextual information attached to the answers, like labels, descriptions, external links, maps, images and videos. How this can be achieved
 will be shown in [Part 6](/docs/doc1.6).
 
 The dataset contains some popular cocktails like: Margerita, Sex on the Beach, Long Island Iced Tea and Grasshopper.
