@@ -20,7 +20,7 @@ There are two options to align the properties:
 
 ## Option 1
 
-The second option is to align the vocabulary using the mapping tab in the Profile page:
+The first option is to align the vocabulary using the mapping tab in the Profile page:
 
 <img src="/img/screenshots/Profile1.png" width="80%">
 
@@ -42,7 +42,7 @@ to the Image list and click on "Save". The properties are then used to to show t
 
 ## Option 2
 
-The first option is to substitute the uris in the original Knowledge Base by the ones supported by QAnswer.
+The second option is to substitute the uris in the original Knowledge Base by the ones supported by QAnswer.
 The cocktail Knowledge Base where the above URIs are substituted can be downloaded [here](/cocktails_align.nt). The updated file can be uploaded and indexd as
 explained in [Part 3](/docs/doc1.3).
 
