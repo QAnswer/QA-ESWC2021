@@ -7,15 +7,15 @@ sidebar_label: Part 4 (Query)
 You can already ask the first questions on top of your dataset, either by selecting it from the top right list of datasets, or by clicking on the "QUERY" button
 under your profile.
 
-![Profile2](/img/screenshots/Profile2.png)
+<img src="/img/screenshots/Profile2.png" width="80%">
 
 For the "cocktails" dataset you could ask for example: "What is a Margerita?" or "What are the ingredients of Margerita?":
 
-![Result_Parial0](/img/screenshots/Result_Partial0.png)
+<img src="/img/screenshots/Result_Partial0.png" width="80%">
 
 and
 
-![Result_Parial1](/img/screenshots/Result_Partial1.png)
+<img src="/img/screenshots/Result_Partial1.png" width="80%">
 
 Note that for now there is no contextual information attached to the answers, like labels, descriptions, external links, maps, images and videos. How this can be achieved
 will be shown in [Part 6](/docs/doc1.6).
