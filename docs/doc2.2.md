@@ -6,14 +6,13 @@ sidebar_label: Part 2 (Signup and Login)
 
 
 We have seen in the previus section which is the relation between your RDF data and the questions you can answer with it.
-<<<<<<< HEAD
 To index your RDF dataset you need to signup to the QAnswer platform. This can be done using the following code snippets:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--cURL-->
 ```
 curl -X POST \
-  http://qanswer-core1.univ-st-etienne.fr/api/user/signup \
+  'http://qanswer-core1.univ-st-etienne.fr/api/user/signup' \
   -H 'Content-Type: application/json' \
   -d '{"name": "NAME", "email":"EMAIL", "username":"USERNAME", "password":"PASSWORD"}'
 ```
@@ -56,10 +55,10 @@ After you will directly be able to login. This can be done using the following c
 <!--DOCUSAURUS_CODE_TABS-->
 <!--cURL-->
 ```
-curl --request POST \
-  --url http://qanswer-core1.univ-st-etienne.fr/api/user/signin \
-  --header 'Content-Type: application/json' \
-  --data '{"usernameOrEmail": "USERNAME", "password":"PASSWORD"}'
+curl -X POST \
+  'http://qanswer-core1.univ-st-etienne.fr/api/user/signin' \
+  -H 'Content-Type: application/json' \
+  -d '{"usernameOrEmail": "USERNAME", "password":"PASSWORD"}'
 ```
 <!--Java-->
 ```
