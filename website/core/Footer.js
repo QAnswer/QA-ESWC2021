@@ -43,6 +43,9 @@ class Footer extends React.Component {
             <a href={this.docUrl('api1', '')}>
               API Reference
             </a>
+              <a href={this.docUrl('termsOfUse', '')}>
+                  Terms of use
+              </a>
           </div>
           <div>
             <h5>Community</h5>
