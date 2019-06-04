@@ -27,7 +27,7 @@ function Help(props) {
       title: 'Browse Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
+      content: 'Ask questions about the documentation and project in the [QAnswer Community](https://qanswer-svc1.univ-st-etienne.fr)',
       title: 'Join the community',
     },
     {
