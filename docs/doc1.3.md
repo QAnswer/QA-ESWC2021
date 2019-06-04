@@ -9,7 +9,7 @@ The cocktail dataset can be downloaded [here](/cocktails.nt).
 
 <img src="/img/screenshots/Profile0.png" width="80%">
 
-You will get to the dataset upload page where you have to specify the name of the dataset and the dataset itself.
+You will get to the dataset upload page where you have to specify the name of the dataset, a logo (optional) and the dataset itself.
 
 <img src="/img/screenshots/Dataset.png" width="80%">
 
