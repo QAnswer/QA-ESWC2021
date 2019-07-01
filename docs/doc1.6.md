@@ -30,7 +30,7 @@ The interface looks as follows:
 
 To align the above properties just add the uri:
 
- http://www.w3.org/2004/02/skos/core#definition
+http://www.w3.org/2004/02/skos/core#definition
 
 to the Definition list and
 
