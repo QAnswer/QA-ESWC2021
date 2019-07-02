@@ -37,10 +37,14 @@ class HomeSplash extends React.Component {
         );
 
         const ProjectTitle = () => (
+            <div>
             <h2 className="projectTitle">
                 {siteConfig.title}
-                <small>{siteConfig.tagline}</small>
+                {/*<small>{siteConfig.tagline}</small>*/}
             </h2>
+            <div className="projectTitle">{siteConfig.tagline}</div>
+            </div>
+
         );
 
         const PromoSection = props => (
@@ -223,10 +227,10 @@ class Index extends React.Component {
             <div>
                 <HomeSplash siteConfig={siteConfig} language={language}/>
                 <div className="mainContainer">
-                    <Description/>
                     <TryOut/>
                     <FeatureCallout/>
                     <Features/>
+                    <Description/>
                     <LearnHow/>
                     {/*<Showcase/>*/}
                 </div>

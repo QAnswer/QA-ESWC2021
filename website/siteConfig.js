@@ -29,7 +29,7 @@ const users = [
 
 const siteConfig = {
   title: 'QAnswer', // Title for your website.
-  tagline: 'Getting direct Answers',
+  tagline: 'Accessing your Knowledge via Natural Language',
   url: 'http://qanswer.eu', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
