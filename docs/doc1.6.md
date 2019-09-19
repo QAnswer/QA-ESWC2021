@@ -20,13 +20,9 @@ There are two options to align the properties:
 
 ## Option 1
 
-The first option is to align the vocabulary using the mapping tab in the Profile page:
+The first option is to align the vocabulary using the mapping tab. The interface looks as follows:
 
-<img src="/img/screenshots/Profile1.png" width="80%">
-
-The interface looks as follows:
-
-<img src="/img/screenshots/Mapping.png" width="80%">
+<img src="/img/screenshots/mapping.png" width="80%">
 
 To align the above properties just add the uri:
 
@@ -51,9 +47,9 @@ explained in [Part 3](/docs/doc1.3).
 
 With these substitutions we get the following result:
 
-<img src="/img/screenshots/Result_Final0.png" width="80%">
+<img src="/img/screenshots/result1.png" width="80%">
 
 and
 
-<img src="/img/screenshots/Result_Final1.png" width="80%">
+<img src="/img/screenshots/result2.png" width="80%">
 
