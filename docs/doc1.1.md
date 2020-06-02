@@ -4,10 +4,7 @@ title: From RDF datasets to Question Answering
 sidebar_label: Part 1 (RDF to QA)
 ---
 
-The key requirement for QAnswer is the RDF model that you provide for indexing. RDF is a flexible data model and can be used in many different ways. QAnswer
-tries to make the weakest assumptions possible on the RDF dataset it can query.
-
-In this tutorial we are going to make a Question Answering (QA) system on top of a cocktail KB that can be found [here](/cocktails.nt). Here are some lines
+In this tutorial we are going to make a Question Answering (QA) system on top of a cocktail KB that can be found [here](QA-ESWC2020/cocktails.nt). Here are some lines
 extracted from the cocktail KB and describing a cocktail called "Margarita" or "Upside Down Margarita". Moreover the snippet contains the information that the
 cocktails contains "Cointreau", "Tequila" and "Lime juice":
 
@@ -50,8 +47,6 @@ This RDF snippet would allow to answer the following questions:
 ```
 
 and variations of these questions.
-
-Check this [link](?????????) to have more information about the structure of the RDF dataset.
 
 What we want to achieve at the end of this tutorial looks like this:
 
