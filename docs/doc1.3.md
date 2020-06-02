@@ -5,7 +5,7 @@ sidebar_label: Part 3 (Upload and index)
 ---
 
 Now you are ready to upload your first dataset. On your [profile page](https://qanswer-frontend.univ-st-etienne.fr/user/profile) click on "Add dataset".
-The cocktail dataset can be downloaded [here](/cocktails.nt).
+The cocktail dataset can be downloaded [here](/QA-ESWC2020/cocktails.nt).
 
 <img src="/QA-ESWC2020/img/screenshots/profile.png" width="80%">
 
