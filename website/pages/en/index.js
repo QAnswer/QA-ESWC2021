@@ -9,8 +9,7 @@ const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
 
-const MarkdownBlock = CompLibrary.MarkdownBlock;
-/* Used to read markdown */
+const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
@@ -30,21 +29,17 @@ class HomeSplash extends React.Component {
             </div>
         );
 
-        const Logo = props => (
-            <div className="projectLogo">
-                <img src={props.img_src} alt="Project Logo"/>
-            </div>
-        );
+        // const Logo = props => (
+        //   <div className="projectLogo">
+        //     <img src={props.img_src} alt="Project Logo" />
+        //   </div>
+        // );
 
         const ProjectTitle = () => (
-            <div>
             <h2 className="projectTitle">
                 {siteConfig.title}
-                {/*<small>{siteConfig.tagline}</small>*/}
+                <small>{siteConfig.tagline}</small>
             </h2>
-            <div className="projectTitle">{siteConfig.tagline}</div>
-            </div>
-
         );
 
         const PromoSection = props => (
@@ -65,11 +60,12 @@ class HomeSplash extends React.Component {
 
         return (
             <SplashContainer>
+                {/*<Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />*/}
                 <div className="inner">
-                    <ProjectTitle siteConfig={siteConfig}/>
+                    <ProjectTitle siteConfig={siteConfig} />
                     <PromoSection>
-                        <Button href="#try">Try It Out</Button>
-                        <Button href={docUrl('doc0.html')}>Get started</Button>
+                        <Button href="https://qanswer-frontend.univ-st-etienne.fr/qa/full?query=In%20which%20country%20is%20ESWC%202020%3F&tags=%5B%5D&lang=en&kb=wikidata%2Copenstreetmap&user=open%2Copen">Try It Out</Button>
+                        {/*<Button href={docUrl('doc0.html')}>Get started</Button>*/}
                     </PromoSection>
                 </div>
             </SplashContainer>
@@ -88,107 +84,69 @@ class Index extends React.Component {
                 id={props.id}
                 background={props.background}>
                 <GridBlock
-                    align={props.align==null? "left" : props.align}
+                    align={props.align}
                     contents={props.children}
                     layout={props.layout}
                 />
             </Container>
         );
 
-
-
-        const TryOut = () => (
-            <Container
-                padding={['bottom', 'top']}
-                id={"try"}
-                background="dark">
-                <GridBlock
-                    align="center"
-                    contents={
-                        [
-                                {
-                                    content: 'You can try out our online demonstrator. It queries large amounts of open data. <a href="http://qanswer-frontend.univ-st-etienne.fr/">Link!</a>',
-                                    title: 'Try it Out!',
-                                }
-                        ]
-                    }
-                />
-                <div align="center">
-                <a href="http://qanswer-frontend.univ-st-etienne.fr/"><img width="65%" src={`${baseUrl}img/front.png`}></img></a>
-                </div>
-            </Container>
+        const FeatureCallout = () => (
+            <div
+                className="productShowcaseSection paddingBottom"
+                style={{textAlign: 'center'}}>
+                <h2>Feature Callout</h2>
+                <MarkdownBlock>These are features of this project</MarkdownBlock>
+            </div>
         );
 
-        const Description = () => (
-            <Block background="light" align="left">
+        const TryOut = () => (
+            <Block id="try">
                 {[
                     {
                         content:
-                            'Welcome! We are an enterprise specialized in Question Answering solutions. A Question Answering (QA) system is a software that finds, for a question posed in natural language, directly an answer.\n' +
-                            '\n' +
-                            'User\'s expect nowadays direct answers. If it is time consuming for your users or employees to find the right information in your data stacks then you will automatically loose money. We help you avoiding this!\n' +
-                            '\n' +
-                            'We are specialized on Question Answering over structured data, i.e. RDF data, relational databases or structured data in xml, json, csv. You need expertise in this field? \n ' +
-                            '\n' +
-                            'Don\'t hesitate to contact us at  <a href="mailto:info@qanswer.eu">info@qanswer.eu</a>',
-                        //image: `${baseUrl}img/docusaurus.svg`,
-                        imageAlign: 'right',
-                        title: 'About',
-                    },
-                ]}
-            </Block>
-        );
-
-        const FeatureCallout = () => (
-            <Block id="features" background="light" align="center">
-                {[
-                    {
-                        content: 'Here are some distinctive features.',
-                        title: 'Our Technology is unique!',
-                    },
-                ]}
-            </Block>
-        );
-
-        const Features = () => (
-            <Block layout="fourColumn" background="light" align="center">
-                {[
-                    {
-                        content: 'We support mutliple languages. Currently: English, German, French, Italian, Spanish, Portugues and Chinese! You need an additional one? That\'s not a problem, we will integrate it for you.',
-                        //image: `${baseUrl}img/docusaurus.svg`,
-                        imageAlign: 'top',
-                        title: 'Multilingual',
-                    },
-                    {
-                        content: 'Your users can aks as they want, using keywords, natural language questions and even malformed questions.',
-                        //image: `${baseUrl}img/docusaurus.svg`,
-                        imageAlign: 'top',
-                        title: 'Robust',
-                    },
-                    {
-                        content: 'You have a big dataset? You want real-time responses? No problem, our solution can manage that!',
-                        //image: `${baseUrl}img/docusaurus.svg`,
-                        imageAlign: 'top',
-                        title: 'Real-time',
-                    },
-                    {
-                        content: 'Making question answering over a new dataset can be difficult. Some approaches need a lot of training data, other are not designed to be portable at all. Our innovative approach is designed so that a new dataset can be easily used as a base for a new Question Answering system.',
-                        //image: `${baseUrl}img/docusaurus.svg`,
-                        imageAlign: 'top',
-                        title: 'Portable',
+                            'To make your landing page more attractive, use illustrations! Check out ' +
+                            '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
+                            'The illustrations you see on this page are from unDraw.',
+                        image: `${baseUrl}img/undraw_code_review.svg`,
+                        imageAlign: 'left',
+                        title: 'Wonderful SVG Illustrations',
                     },
                 ]}
             </Block>
         );
 
         const LearnHow = () => (
-            <Block align="center">
+            <Block background="light">
                 {[
                     {
-                        content: 'Contact us at <a href="mailto:info@qanswer.eu">info@qanswer.eu</a>',
-                        //image: `${baseUrl}img/docusaurus.svg`,
-                        //imageAlign: 'right',
-                        title: 'Interested?',
+                        content:
+                            'a',
+                        image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
+                        imageAlign: 'right',
+                        title: 'Description',
+                    },
+                ]}
+            </Block>
+        );
+
+        const Features = () => (
+            <Block layout="fourColumn">
+                {[
+                    {
+                        image: `${baseUrl}img/undraw_react.svg`,
+                        imageAlign: 'top',
+                        title: 'Learn how QA systems work!',
+                    },
+                    {
+                        image: `${baseUrl}img/undraw_react.svg`,
+                        imageAlign: 'top',
+                        title: 'Learn how QA systems work!',
+                    },
+                    {
+                        image: `${baseUrl}img/undraw_operating_system.svg`,
+                        imageAlign: 'top',
+                        title: 'Construct QA systems',
                     },
                 ]}
             </Block>
@@ -203,7 +161,7 @@ class Index extends React.Component {
                 .filter(user => user.pinned)
                 .map(user => (
                     <a href={user.infoLink} key={user.infoLink}>
-                        <img src={user.image} alt={user.caption} title={user.caption}/>
+                        <img src={user.image} alt={user.caption} title={user.caption} />
                     </a>
                 ));
 
@@ -225,14 +183,88 @@ class Index extends React.Component {
 
         return (
             <div>
-                <HomeSplash siteConfig={siteConfig} language={language}/>
+                <HomeSplash siteConfig={siteConfig} language={language} />
                 <div className="mainContainer">
-                    <TryOut/>
-                    <FeatureCallout/>
-                    <Features/>
-                    <Description/>
-                    <LearnHow/>
-                    {/*<Showcase/>*/}
+                    <Block background="light">
+                        {[
+                            {
+                                content:
+                                    '**Knowledge Graphs** are designed to be easily consumed by machines, but they are not easily accessible by end-users. **Question Answering (QA)** over Knowledge Graphs (KGs) is seen as a technology able to bridge the gap between end-users and Knowledge Graphs. In the last years a lot of research was carried out to solve the problem of QA over KGs, but constructing a QA system over a new KG for non-expert users is still not easy.\n' +
+                                    '\n' +
+                                    'The aim of this tutorial is to address this issue. We will show how recently developed technologies, like **QAnswer** and **Qanary**, allow constructing, customizing, evaluating, and optimizing QA systems on RDF datasets using a lightweight approach.',
+                                image: `${baseUrl}img/where.png`,
+                                imageAlign: 'right',
+                                title: 'Description',
+                            },
+                        ]}
+                    </Block>
+                    <Block align="left">
+                        {[
+                            {
+                                content:
+
+                                    ' **10:00 Starting**\n' +
+                                    '\n' +
+                                    ' ---**10 min -** Introduction and people gathering\n' +
+                                    '\n' +
+                                    ' ---**25 min -** Keynote and introduction into the field of Question Answering (general principles and variations)\n' +
+                                    '\n' +
+                                    ' ---**25 min -** <a href="/QA-ESWC2020/presentation1.pdf">Understanding the tasks of QA over KGs</a> \n' +
+                                    '\n' +
+                                    '**11:00-11:30 Coffee break**\n' +
+                                    '\n' +
+                                    ' ---**60 min -** <a href="/QA-ESWC2020/docs/quick1.1">Hands-on session I:</a> We are using QAnswer to create your own **Digital Twin**!\n' +
+                                    '\n' +
+                                    ' **13:00-14:00 Lunch break** \n' +
+                                    '\n' +
+                                    ' ---**30 min -** QAnswer: how it works?\n' +
+                                    '\n' +
+                                    ' ---**15 min -** Talk: Construct a Question Answering system on the Covid-19 dataset. \n' +
+                                    '\n' +
+                                    ' ---**15 min -** Examples: other QA systems. \n' +
+                                    '\n' +
+                                    '**15:00-15:30 Coffee break**\n' +
+                                    '\n' +
+                                    ' ---**15 min -** Gathering and discussion of the participants to defined particular goals for developing an individual Question Answering system\n' +
+                                    '\n' +
+                                    ' ---**60 min -** <a href="/QA-ESWC2020/docs/doc1.1">Hands-on session II:</a> Construct a Question Answering System either on your dataset or on a dataset provided.\n' +
+                                    '\n' +
+                                    ' ---**15 min -** Presentation of final results (i.e., the created Question Answering systems)\n' +
+                                    '\n' +
+                                    ' **17:00 End**\n',
+                                //image: `${baseUrl}img/docusaurus.svg`,
+                                imageAlign: 'right',
+                                title: 'Schedule',
+                            },
+                        ]}
+                    </Block>
+                    <Block layout="threeColumn" background="light" align='center'>
+                        {[
+                            {
+                                image: `${baseUrl}img/Dennis_Diefenbach-4.jpg`,
+                                imageAlign: 'top',
+                                title: 'Dennis Diefenbach',
+                                content: 'Dennis Diefenbach is a Ph.D. in the area of QA over Knowledge Graphs. Dennis Diefenbach published over 20 publications in this area in renown Conferences and Journals like the International Semantic Web Conference and the Semantic Web Journal. He is the main contributor of [QAnswer](http://qanswer.eu), an AI driven platform to query Knowledge Graphs in natural language. An online service querying large amounts of open data can be found under [http://qanswer.eu/qa](http://qanswer.eu/qa). '
+                            },
+                            {
+                                image: `${baseUrl}img/Andreas_Both.jpg`,
+                                imageAlign: 'top',
+                                title: 'Andreas Both',
+                                content: 'Andreas Both is a professor in Computer Scientist at the Anhalt Univer- sity of Applied Science (Germany) and the Head of Research at DATEV a large business software company located in Germany. At Web-driven com- panies he has worked for many years in leading research and development positions on different aspects of modern Web technologies. In particular, data-driven processes, data integration, information retrieval applications, and web engineering topics are his fields of research. He commits himself to advance in using the World Wide Web as a knowledge base and devel- oping the next generation of Web applications to open the capabilities of the WWW for both industry and users.'
+                            },
+                            {
+                                image: `${baseUrl}img/Pierre_Maret.jpg`,
+                                imageAlign: 'top',
+                                title: 'Pierre Maret',
+                                content: 'Pierre Maret is a professor in Computer Science at the University of Lyon-Saint Etienne (France), Laboratory Hubert Curien, where he is lead- ing the team Knowledge Representation and Reasoning. His background is on Knowledge Management, Data Modeling and Artificial Intelligence. He has been leading the French side of the ITN Marie-Slokowska Curie WDAqua. He is also involved into scientific collaborations with industrial partners.'
+                            },
+                        ]}
+                    </Block>
+                    {/*<Features />*/}
+                    {/*<Features />*/}
+                    {/*<FeatureCallout />*/}
+                    {/*<TryOut />*/}
+                    {/*<Showcase />*/}
                 </div>
             </div>
         );

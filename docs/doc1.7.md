@@ -31,11 +31,11 @@ type / Ingredients
 
 This service is used to display what the QA system understood:
 
-<img src="/img/screenshots/SparqlToUser.png" width="80%">
+<img src="/QA-ESWC2020/img/screenshots/SparqlToUser.png" width="80%">
 
 or to facilitate the understanding of the generated interpretations:
 
-<img src="/img/screenshots/SparqlToUser2.png" width="80%">
+<img src="/QA-ESWC2020/img/screenshots/SparqlToUser2.png" width="80%">
 
 
 ## Summa Server
@@ -43,7 +43,7 @@ or to facilitate the understanding of the generated interpretations:
 The second service that is put in place is the Summa Server. The Summa Server summarizes 
 entities, i.e. extract top-k RDF facts associated to an entity. For example the summary of Salt looks as follows:
 
-<img src="/img/screenshots/SummaServer.png" width="80%">
+<img src="/QA-ESWC2020/img/screenshots/SummaServer.png" width="80%">
 
 Note that the summary is browsable, i.e. by clicking on the links one can discover more
 about the corresponding entity. 

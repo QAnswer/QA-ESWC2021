@@ -1,9 +1,8 @@
 {
   "docs": {
     "Introduction": ["doc0"],
-    "Tutorial (UI)": ["doc1.1", "doc1.2", "doc1.3", "doc1.4", "doc1.5", "doc1.6", "doc1.7"],
-    "Tutorial (API)": ["doc2.1","doc2.2","doc2.3","doc2.4","doc2.5","doc2.6", "doc2.7"],
-    "Requirements": ["req0","req1.1","req1.2","req1.3", "termsOfUse"],
+    "Hands-on Session 1": ["quick1.1", "quick1.2", "quick1.3", "quick1.4", "quick1.5", "quick1.6","quick1.7"],
+    "Hands-on Session 2": ["doc1.1", "doc1.2", "doc1.3", "doc1.4", "doc1.5", "doc1.6", "doc1.7"],
     "Terms of Use": ["termsOfUse"]
   }
 }
