@@ -234,7 +234,7 @@ class Index extends React.Component {
                                     ' **17:00 End**\n',
                                 //image: `${baseUrl}img/docusaurus.svg`,
                                 imageAlign: 'right',
-                                title: 'Schedule',
+                                title: 'Schedule for June 3rd 2020',
                             },
                         ]}
                     </Block>
