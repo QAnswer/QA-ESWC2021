@@ -4,7 +4,9 @@ title: From RDF datasets to Question Answering
 sidebar_label: Part 1 (RDF to QA)
 ---
 
-In this tutorial we are going to make a Question Answering (QA) system on top of a cocktail KB that can be found [here](QA-ESWC2020/cocktails.nt). Here are some lines
+In this tutorial we are going to make a Question Answering (QA) system on top of a KG!
+ 
+You can either take your own RDF dataset (take a small one, or a snippet < 10MB) or this one [here](QA-ESWC2020/cocktails.nt) about cocktails. Here are some lines
 extracted from the cocktail KB and describing a cocktail called "Margarita" or "Upside Down Margarita". Moreover the snippet contains the information that the
 cocktails contains "Cointreau", "Tequila" and "Lime juice":
 
