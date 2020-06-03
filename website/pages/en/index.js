@@ -207,7 +207,7 @@ class Index extends React.Component {
                                     '\n' +
                                     ' ---**10 min -** Introduction and people gathering\n' +
                                     '\n' +
-                                    ' ---**25 min -** Keynote and introduction into the field of Question Answering (general principles and variations)\n' +
+                                    ' ---**25 min -** <a href="/QA-ESWC2020/presentation0.pdf">Keynote and introduction into the field of Question Answering (general principles and variations)</a>\n' +
                                     '\n' +
                                     ' ---**25 min -** <a href="/QA-ESWC2020/presentation1.pdf">Understanding the tasks of QA over KGs</a> \n' +
                                     '\n' +
@@ -217,9 +217,9 @@ class Index extends React.Component {
                                     '\n' +
                                     ' **13:00-14:00 Lunch break** \n' +
                                     '\n' +
-                                    ' ---**30 min -** QAnswer: how it works?\n' +
+                                    ' ---**30 min -** <a href="/QA-ESWC2020/presentation2.pdf">QAnswer: how it works?</a>\n' +
                                     '\n' +
-                                    ' ---**15 min -** Talk: Construct a Question Answering system on the Covid-19 dataset. \n' +
+                                    ' ---**15 min -** <a href="/QA-ESWC2020/presentation3.pdf">Talk: Construct a Question Answering system on the Covid-19 dataset.</a> \n' +
                                     '\n' +
                                     ' ---**15 min -** Examples: other QA systems. \n' +
                                     '\n' +

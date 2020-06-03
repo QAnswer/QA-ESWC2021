@@ -24,7 +24,7 @@ Which gives a long list of cocktails but with low confidence. By using the feedb
 the system will save the given example.
 
 After asking a set of questions, and by giving feedback you will have created a training set. A training set for the cocktail dataset can be downloaded
-[here](QA-ESWC2020/questions_cocktail.json). It can be uploaded from the [profile page](https://qanswer-frontend.univ-st-etienne.fr/user/profile) using the "Upload Questions" button.
+[here](/QA-ESWC2020/questions_cocktail.json). It can be uploaded from the [profile page](https://qanswer-frontend.univ-st-etienne.fr/user/profile) using the "Upload Questions" button.
 
 
 By clicking on "Training Evaluation" in your
