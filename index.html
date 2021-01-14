@@ -1,8 +1,91 @@
-<!DOCTYPE html><html lang=""><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>QA Tutorial @ ESWC 2021 · Constructing Question Answering Systems over Knowledge Graphs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Constructing Question Answering Systems over Knowledge Graphs"/><meta property="og:title" content="QA Tutorial @ ESWC 2021 · Constructing Question Answering Systems over Knowledge Graphs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="Constructing Question Answering Systems over Knowledge Graphs"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div><div class="homeContainer"><div class="homeSplashFade"><div class="wrapper homeWrapper"><div class="inner"><h2 class="projectTitle">QA Tutorial @ ESWC 2021<small>Constructing Question Answering Systems over Knowledge Graphs</small></h2><div class="section promoSection"><div class="promoRow"><div class="pluginRowBlock"><div class="pluginWrapper buttonWrapper"><a class="button" href="https://qanswer-frontend.univ-st-etienne.fr/qa/full?query=In%20which%20country%20is%20ESWC%202020%3F&amp;tags=%5B%5D&amp;lang=en&amp;kb=wikidata%2Copenstreetmap&amp;user=open%2Copen">Try It Out</a></div></div></div></div></div></div></div></div><div class="mainContainer"><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignRight twoByGridBlock"><div class="blockContent"><h2><div><span><p>Description</p>
-</span></div></h2><div><span><p><strong>Knowledge Graphs</strong> are designed to be easily consumed by machines, but they are not easily accessible by end-users. <strong>Question Answering (QA)</strong> over Knowledge Graphs (KGs) is seen as a technology able to bridge the gap between end-users and Knowledge Graphs. In the last years a lot of research was carried out to solve the problem of QA over KGs, but constructing a QA system over a new KG for non-expert users is still not easy.</p>
-<p>The aim of this tutorial is to address this issue. We will show how recently developed technologies, like <strong>QAnswer</strong> and <strong>Qanary</strong>, allow constructing, customizing, evaluating, and optimizing QA systems on RDF datasets using a lightweight approach.</p>
-</span></div></div><div class="blockImage"><img src="/QA-ESWC2021/img/where.png"/></div></div></div></div></div><div class="container paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement twoByGridBlock"><div class="blockContent"><h2><div><span><p>First draft of a schedule 2021</p>
-</span></div></h2><div><span><p><strong>10:00 Starting</strong></p>
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>QA Tutorial @ ESWC 2021 · Constructing Question Answering Systems over Knowledge Graphs</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="Docusaurus" />
+    <meta name="description" content="Constructing Question Answering Systems over Knowledge Graphs" />
+    <meta property="og:title" content="QA Tutorial @ ESWC 2021 · Constructing Question Answering Systems over Knowledge Graphs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html" />
+    <meta property="og:description" content="Constructing Question Answering Systems over Knowledge Graphs" />
+    <meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg" />
+    <link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+    <link rel="stylesheet" href="/QA-ESWC2021/css/main.css" />
+    <script src="/QA-ESWC2021/js/codetabs.js"></script>
+</head>
+
+<body>
+    <div class="fixedHeaderContainer">
+        <div class="headerWrapper wrapper">
+            <header>
+                <a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" />
+                    <h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2>
+                </a>
+                <div class="navigationWrapper navigationSlider">
+                    <nav class="slidingNav">
+                        <ul class="nav-site nav-site-internal">
+                            <li class=""><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="navPusher">
+        <div>
+            <div class="homeContainer">
+                <div class="homeSplashFade">
+                    <div class="wrapper homeWrapper">
+                        <div class="inner">
+                            <h2 class="projectTitle">QA Tutorial @ ESWC 2021<small>Constructing Question Answering Systems over Knowledge Graphs</small></h2>
+                            <div class="section promoSection">
+                                <div class="promoRow">
+                                    <div class="pluginRowBlock">
+                                        <div class="pluginWrapper buttonWrapper"><a class="button" href="https://qanswer-frontend.univ-st-etienne.fr/qa/full?query=In%20which%20country%20is%20ESWC%202020%3F&amp;tags=%5B%5D&amp;lang=en&amp;kb=wikidata%2Copenstreetmap&amp;user=open%2Copen">Try It Out</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainContainer">
+                <div class="container lightBackground paddingBottom paddingTop">
+                    <div class="wrapper">
+                        <div class="gridBlock">
+                            <div class="blockElement imageAlignSide imageAlignRight twoByGridBlock">
+                                <div class="blockContent">
+                                    <h2>
+                                        <div><span><p>Description</p>
+</span></div>
+                                    </h2>
+                                    <div><span><p><strong>Knowledge Graphs</strong> are designed to be easily consumed by machines, but they are not easily accessible by end-users. <strong>Question Answering (QA)</strong> over Knowledge Graphs (KGs) is seen as a technology able to bridge the gap between end-users and Knowledge Graphs. In the last years a lot of research was carried out to solve the problem of QA over KGs, but constructing a QA system over a new KG for non-expert users is still not easy.</p>
+<p>The aim of this tutorial is to address this issue. We will show how recently developed technologies, like <strong><a href="https://www.qanswer.eu/">QAnswer</a></strong> and <strong><a href="https://github.com/WDAqua/Qanary">Qanary</a></strong>, allow constructing, customizing, evaluating, and optimizing QA systems on RDF datasets using a lightweight approach.</p>
+</span></div>
+                                </div>
+                                <div class="blockImage"><img src="/QA-ESWC2021/img/where.png" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container paddingBottom paddingTop">
+                    <div class="wrapper">
+                        <div class="gridBlock">
+                            <div class="blockElement twoByGridBlock">
+                                <div class="blockContent">
+                                    <h2>
+                                        <div><span><p>First draft of a schedule 2021</p>
+</span></div>
+                                    </h2>
+                                    <div><span><p><strong>10:00 Starting</strong></p>
 <p>---<strong>10 min -</strong> Introduction and people gathering</p>
 <p>---<strong>25 min -</strong> <a href="/QA-ESWC2020/presentation0.pdf">Keynote and introduction into the field of Question Answering (general principles and variations)</a></p>
 <p>---<strong>25 min -</strong> <a href="/QA-ESWC2020/presentation1.pdf">Understanding the tasks of QA over KGs</a></p>
@@ -17,10 +100,85 @@
 <p>---<strong>60 min -</strong> <a href="/QA-ESWC2020/docs/doc1.1">Hands-on session II:</a> Construct a Question Answering System either on your dataset or on a dataset provided.</p>
 <p>---<strong>15 min -</strong> Presentation of final results (i.e., the created Question Answering systems)</p>
 <p><strong>17:00 End</strong></p>
-</span></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement alignCenter imageAlignTop threeByGridBlock"><div class="blockImage"><img src="/QA-ESWC2021/img/Dennis_Diefenbach-4.jpg"/></div><div class="blockContent"><h2><div><span><p>Dennis Diefenbach</p>
-</span></div></h2><div><span><p>Dennis Diefenbach is a Ph.D. in the area of QA over Knowledge Graphs. Dennis Diefenbach published over 20 publications in this area in renown Conferences and Journals like the International Semantic Web Conference and the Semantic Web Journal. He is the main contributor of <a href="http://qanswer.eu">QAnswer</a>, an AI driven platform to query Knowledge Graphs in natural language. An online service querying large amounts of open data can be found under <a href="http://qanswer.eu/qa">http://qanswer.eu/qa</a>.</p>
-</span></div></div></div><div class="blockElement alignCenter imageAlignTop threeByGridBlock"><div class="blockImage"><img src="/QA-ESWC2021/img/Andreas_Both.jpg"/></div><div class="blockContent"><h2><div><span><p>Andreas Both</p>
-</span></div></h2><div><span><p>Andreas Both is a professor in Computer Scientist at the Anhalt Univer- sity of Applied Science (Germany) and the Head of Research at DATEV a large business software company located in Germany. At Web-driven com- panies he has worked for many years in leading research and development positions on different aspects of modern Web technologies. In particular, data-driven processes, data integration, information retrieval applications, and web engineering topics are his fields of research. He commits himself to advance in using the World Wide Web as a knowledge base and devel- oping the next generation of Web applications to open the capabilities of the WWW for both industry and users.</p>
-</span></div></div></div><div class="blockElement alignCenter imageAlignTop threeByGridBlock"><div class="blockImage"><img src="/QA-ESWC2021/img/Pierre_Maret.jpg"/></div><div class="blockContent"><h2><div><span><p>Pierre Maret</p>
-</span></div></h2><div><span><p>Pierre Maret is a professor in Computer Science at the University of Lyon-Saint Etienne (France), Laboratory Hubert Curien, where he is lead- ing the team Knowledge Representation and Reasoning. His background is on Knowledge Management, Data Modeling and Artificial Intelligence. He has been leading the French side of the ITN Marie-Slokowska Curie WDAqua. He is also involved into scientific collaborations with industrial partners.</p>
-</span></div></div></div></div></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container lightBackground paddingBottom paddingTop">
+                    <div class="wrapper">
+                        <div class="gridBlock">
+                            <div class="blockElement alignCenter imageAlignTop threeByGridBlock">
+                                <div class="blockImage"><img src="/QA-ESWC2021/img/Dennis_Diefenbach-4.jpg" /></div>
+                                <div class="blockContent">
+                                    <h2>
+                                        <div><span><p>Dennis Diefenbach</p>
+</span></div>
+                                    </h2>
+                                    <div><span><p>Dennis Diefenbach is a Ph.D. in the area of QA over Knowledge Graphs. Dennis Diefenbach published over 20 publications in this area in renown Conferences and Journals like the International Semantic Web Conference and the Semantic Web Journal. He is the main contributor of <a href="http://qanswer.eu">QAnswer</a>, an AI driven platform to query Knowledge Graphs in natural language. An online service querying large amounts of open data can be found under <a href="http://qanswer.eu/qa">http://qanswer.eu/qa</a>.</p>
+</span></div>
+                                </div>
+                            </div>
+                            <div class="blockElement alignCenter imageAlignTop threeByGridBlock">
+                                <div class="blockImage"><img src="/QA-ESWC2021/img/Andreas_Both.jpg" /></div>
+                                <div class="blockContent">
+                                    <h2>
+                                        <div><span><p>Andreas Both</p>
+</span></div>
+                                    </h2>
+                                    <div><span><p><a href="http://www.andreasboth.de/en">Andreas Both</a> is a professor in Computer Science at the <a href="https://www.hs-anhalt.de/en/start-page.html">Anhalt University of Applied Science</a> (Germany) and the Head of Research at <a href="http://www.datev.com">DATEV</a> a large business software company located in Germany. At Web-driven companies he has worked for many years in leading research and development positions on different aspects of modern Web technologies. In particular, data-driven processes, data integration, information retrieval applications, and web engineering topics are his fields of research. He commits himself to advance in using the World Wide Web as a knowledge base and developing the next generation of Web applications to open the capabilities of the Web for both industry and users. He is one of the main contributors to the <a href="https://github.com/WDAqua/Qanary">Qanary framework</a> and the <a href="https://github.com/WDAqua/Qanary-question-answering-components">Qanary component ecosystem</a>.</p>
+</span></div>
+                                </div>
+                            </div>
+                            <div class="blockElement alignCenter imageAlignTop threeByGridBlock">
+                                <div class="blockImage"><img src="/QA-ESWC2021/img/Pierre_Maret.jpg" /></div>
+                                <div class="blockContent">
+                                    <h2>
+                                        <div><span><p>Pierre Maret</p>
+</span></div>
+                                    </h2>
+                                    <div><span><p>Pierre Maret is a professor in Computer Science at the University of Lyon-Saint Etienne (France), Laboratory Hubert Curien, where he is lead- ing the team Knowledge Representation and Reasoning. His background is on Knowledge Management, Data Modeling and Artificial Intelligence. He has been leading the French side of the ITN Marie-Slokowska Curie WDAqua. He is also involved into scientific collaborations with industrial partners.</p>
+</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="nav-footer" id="footer">
+            <section class="sitemap">
+                <a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58" /></a>
+                <div>
+                    <h5>Docs</h5><a href="/QA-ESWC2021/docs/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/doc1.1.html">Hands-on session II</a></div>
+                <div>
+                    <h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div>
+                <div>
+                    <h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true"
+                        data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a>
+                    <div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div>
+                </div>
+            </section>
+            <section class="copyright">Copyright © 2021 QAnswer</section>
+        </footer>
+    </div>
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, 'script', 'twitter-wjs'));
+    </script>
+</body>
+
+</html>
