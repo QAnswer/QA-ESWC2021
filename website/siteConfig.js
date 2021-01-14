@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-    title: 'QA Tutorial @ ESWC 2020', // Title for your website.
+    title: 'QA Tutorial @ ESWC 2021', // Title for your website.
     tagline: 'Constructing Question Answering Systems over Knowledge Graphs',
     url: 'https://your-docusaurus-test-site.com', // Your website URL
     baseUrl: '/', // Base URL for your project */
@@ -95,8 +95,8 @@ const siteConfig = {
     repoUrl: 'http://github.com/QAnswer',
 
     url: 'https://QAnswer.github.io', // Your website URL
-    baseUrl: '/QA-ESWC2020/',
-    projectName: 'QA-ESWC2020',
+    baseUrl: '/QA-ESWC2021/',
+    projectName: 'QA-ESWC2021',
     organizationName: 'QAnswer'
 
     // For sites with a sizable amount of content, set collapsible to true.
