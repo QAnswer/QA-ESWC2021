@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tutorial: Contextual information · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Up to now the result was always given by the &amp;quot;rdfs:label&amp;quot;. But in an RDF dataset there are potentially many contextual information that can be shown like&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tutorial: Contextual information · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;Up to now the result was always given by the &amp;quot;rdfs:label&amp;quot;. But in an RDF dataset there are potentially many contextual information that can be shown like&lt;/p&gt;
+"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Hands-on Session 2</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc0">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 1</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.1">Create a Playground</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.2">Create our first node</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.3">Create our first relation</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.4">My creativity ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.5">Learning a bit ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.6">Making it prettier</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.7">Free me in the WWW</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 2</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.1">Part 1 (RDF to QA)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.2">Part 2 (Signup and Login)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.3">Part 3 (Upload and index)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.4">Part 4 (Query)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.5">Part 5 (Feedback and train)</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/QA-ESWC2021/docs/doc1.6">Part 6 (Contextual information)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.7">Part 7 (Additional services)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Terms of Use</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/termsOfUse">Terms of use</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tutorial: Contextual information</h1></header><article><div><span><p>Up to now the result was always given by the &quot;rdfs:label&quot;. But in an RDF dataset there are potentially many contextual information that can be shown like
+descriptions, images, maps and videos. To allow QAnswer to display this contextual information your ontology vocabulary has to be aligned by the one used by
+QAnswer. This is necessary since there are different proposed vocabulary to express this type of information in the Semantic Web Community and no one became
+a standard. QAnswer is using some common properties. So let's start.</p>
+<p>The main properties that can be aligned are listed in <a href="/docs/req1.3">Requirments 3</a>
+In the case of the cocktail Knowledge Base the following properties can be aligned:</p>
+<ol>
+<li><a href="http://www.w3.org/2004/02/skos/core#definition">http://www.w3.org/2004/02/skos/core#definition</a> to  <a href="http://schema.org/description">http://schema.org/description</a></li>
+<li><a href="http://vocabulary.semantic-web.at/cocktail-ontology/image">http://vocabulary.semantic-web.at/cocktail-ontology/image</a> to <a href="http://www.wikidata.org/prop/direct/P18">http://www.wikidata.org/prop/direct/P18</a></li>
+<li><a href="http://www.w3.org/2004/02/skos/core#exactMatch">http://www.w3.org/2004/02/skos/core#exactMatch</a> to <a href="http://qanswer.eu/dbpedia">http://qanswer.eu/dbpedia</a></li>
+</ol>
+<p>There are two options to align the properties:</p>
+<h2><a class="anchor" aria-hidden="true" id="option-1"></a><a href="#option-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option 1</h2>
+<p>The first option is to align the vocabulary using the mapping tab. The interface looks as follows:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/mapping.png" width="80%"></p>
+<p>To align the above properties just add the uri:</p>
+<p><a href="http://www.w3.org/2004/02/skos/core#definition">http://www.w3.org/2004/02/skos/core#definition</a></p>
+<p>to the Definition list and</p>
+<p><a href="http://vocabulary.semantic-web.at/cocktail-ontology/image">http://vocabulary.semantic-web.at/cocktail-ontology/image</a></p>
+<p>to the Image list and click on &quot;Save&quot;. The properties are then used to to show the contextual information.</p>
+<h2><a class="anchor" aria-hidden="true" id="option-2"></a><a href="#option-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option 2</h2>
+<p>The second option is to substitute the uris in the original Knowledge Base by the ones supported by QAnswer.
+The cocktail Knowledge Base where the above URIs are substituted can be downloaded <a href="/cocktails_align.nt">here</a>. The updated file can be uploaded and indexd as
+explained in <a href="/docs/doc1.3">Part 3</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="result"></a><a href="#result" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Result</h2>
+<p>With these substitutions we get the following result:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/result1.png" width="80%"></p>
+<p>and</p>
+<p><img src="/QA-ESWC2020/img/screenshots/result2.png" width="80%"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/QA-ESWC2021/docs/doc1.5"><span class="arrow-prev">← </span><span>Part 5 (Feedback and train)</span></a><a class="docs-next button" href="/QA-ESWC2021/docs/doc1.7"><span>Part 7 (Additional services)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#option-1">Option 1</a></li><li><a href="#option-2">Option 2</a></li><li><a href="#result">Result</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/en/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/en/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

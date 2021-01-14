@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tutorial: Query · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;You can already ask the first questions on top of your dataset. For the &amp;quot;cocktails&amp;quot; dataset you could ask for example: &amp;quot;What is a Margarita?&amp;quot; or &amp;quot;What are the ingredients of Margarita?&amp;quot;:&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tutorial: Query · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;You can already ask the first questions on top of your dataset. For the &amp;quot;cocktails&amp;quot; dataset you could ask for example: &amp;quot;What is a Margarita?&amp;quot; or &amp;quot;What are the ingredients of Margarita?&amp;quot;:&lt;/p&gt;
+"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tutorial: Query</h1></header><article><div><span><p>You can already ask the first questions on top of your dataset. For the &quot;cocktails&quot; dataset you could ask for example: &quot;What is a Margarita?&quot; or &quot;What are the ingredients of Margarita?&quot;:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="18-tab" data-group="group_17" data-tab="tabpanel_18">cURL</div><div class="nav-link" id="19-tab" data-group="group_17" data-tab="tabpanel_19">Java</div><div class="nav-link" id="20-tab" data-group="group_17" data-tab="tabpanel_20">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_17" tabindex="-1" id="tabpanel_18"><div><span><pre><code class="hljs">curl -X GET <span class="hljs-string">\</span>
+  <span class="hljs-string">'http://qanswer-core1.univ-st-etienne.fr/api/qa/full'</span> <span class="hljs-string">\</span>
+   --data-urlencode <span class="hljs-string">'question= what is a margerita'</span> <span class="hljs-string">\</span>
+   --data-urlencode <span class="hljs-string">'lang=en'</span> <span class="hljs-string">\</span>
+   --data-urlencode <span class="hljs-string">'kb=cocktails'</span> <span class="hljs-string">\</span>
+  -H <span class="hljs-string">'Authorization: Bearer eyJhbGciOiJIUzUxMiJ.....'</span> <span class="hljs-string">\</span>
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_17" tabindex="-1" id="tabpanel_19"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url(<span class="hljs-string">"http://qanswer-core1.univ-st-etienne.fr/api/qa/full?question=what%20is%20a%20margerita&amp;lang=en&amp;kb=cocktails"</span>)
+  .<span class="hljs-builtin-name">get</span>()
+  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJ......"</span>)
+  .build();
+
+Response response = client.newCall(request).execute();
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_17" tabindex="-1" id="tabpanel_20"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://qanswer-core1.univ-st-etienne.fr/api/qa/full?question=what%20is%20a%20margerita&amp;lang=en&amp;kb=cocktails"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxMi....."</span>,
+  }
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>The results looks as following:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"question"</span>: <span class="hljs-string">"what is a margerita"</span>,
+    <span class="hljs-attr">"queries"</span>: [
+        {
+            <span class="hljs-attr">"query"</span>: <span class="hljs-string">"SELECT DISTINCT ?s0 where { VALUES ?s0 { &lt;http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&gt; }  } LIMIT 1000"</span>,
+            <span class="hljs-attr">"confidence"</span>: <span class="hljs-number">0.9999999999996994</span>,
+            <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>
+        },
+        {
+            <span class="hljs-attr">"query"</span>: <span class="hljs-string">"SELECT DISTINCT ?s0 where { VALUES ?s0 { &lt;http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&gt; }  } LIMIT 1000"</span>,
+            <span class="hljs-attr">"confidence"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>
+        },
+        {
+            <span class="hljs-attr">"query"</span>: <span class="hljs-string">"SELECT DISTINCT ?o1 where { &lt;http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&gt;  ?p1  ?o1 . } limit 1000"</span>,
+            <span class="hljs-attr">"confidence"</span>: <span class="hljs-number">0.011127059360766982</span>,
+            <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>
+        },
+        {
+            <span class="hljs-attr">"query"</span>: <span class="hljs-string">"SELECT DISTINCT ?s1 where { ?s1  ?p1  &lt;http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&gt; . } limit 1000"</span>,
+            <span class="hljs-attr">"confidence"</span>: <span class="hljs-number">0.01182653776243101</span>,
+            <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>
+        },
+        {
+            <span class="hljs-attr">"query"</span>: <span class="hljs-string">"SELECT DISTINCT ?o1 where { &lt;http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&gt;  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  ?o1 . } limit 1000"</span>,
+            <span class="hljs-attr">"confidence"</span>: <span class="hljs-number">2.035927837191609e-11</span>,
+            <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>
+        }
+    ],
+    <span class="hljs-attr">"qaContexts"</span>: [
+        {
+            <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>,
+            <span class="hljs-attr">"literal"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71"</span>,
+            <span class="hljs-attr">"description"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"links"</span>: {
+                <span class="hljs-attr">"cocktails"</span>: <span class="hljs-string">"http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71"</span>
+            },
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Margarita"</span>,
+            <span class="hljs-attr">"time"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"images"</span>: [],
+            <span class="hljs-attr">"audio"</span>: [],
+            <span class="hljs-attr">"geo"</span>: [],
+            <span class="hljs-attr">"video"</span>: [],
+            <span class="hljs-attr">"geoJson"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"pageRank"</span>: <span class="hljs-number">0.3047554</span>
+        }
+    ]
+}
+</code></pre>
+<p>It contains the generated queries with the corresponding confidence scores and the answer. Note that for now there is no contextual information attached to the answers, like labels, descriptions, external links, maps, images and videos. How this can be achieved
+will be shown in <a href="/docs/doc2.6">Part 6</a>.</p>
+<p>The dataset contains some popular cocktails like: Margarita, Sex on the Beach, Long Island Iced Tea and Grasshopper.</p>
+<p>The results that you achieve may not be satisfying. To train the machine learning model to fit your dataset check the next section.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/en/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/en/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

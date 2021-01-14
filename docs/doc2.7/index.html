@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tutorial: Additional services · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;When uploading and indexing the data QAnswer also generated some additonal services.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tutorial: Additional services · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;When uploading and indexing the data QAnswer also generated some additonal services.&lt;/p&gt;
+"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tutorial: Additional services</h1></header><article><div><span><p>When uploading and indexing the data QAnswer also generated some additonal services.
+We describe them here briefly</p>
+<h2><a class="anchor" aria-hidden="true" id="sparqltouser"></a><a href="#sparqltouser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SparqlToUser</h2>
+<p>One service that is set up is SparqlToUser, a service that converts a SPARQL query to
+a representation that is understandable by an end-user.</p>
+<p>Concretely the service converts the SPARQL query:</p>
+<pre><code class="hljs"><span class="hljs-keyword">SELECT </span>DISTINCT ?<span class="hljs-built_in">s1</span> where { 
+    ?<span class="hljs-built_in">s1</span> ?<span class="hljs-built_in">p1</span> &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Ingredients&gt; .
+    ?<span class="hljs-built_in">s1</span> ?<span class="hljs-built_in">p2</span> &lt;http://vocabulary.semantic-web.at/cocktails/<span class="hljs-number">2</span>d85fb1b-<span class="hljs-number">96</span>cb-<span class="hljs-number">4</span>c48-<span class="hljs-number">8</span>df5-<span class="hljs-number">707032</span>f34e71&gt; . 
+}
+<span class="hljs-symbol">limit</span> <span class="hljs-number">1000</span>
+</code></pre>
+<p>to the more user friendly representation:</p>
+<pre><code class="hljs"><span class="hljs-keyword">type</span> <span class="hljs-type">/ </span>Ingredients
+ / <span class="hljs-keyword">is</span> part <span class="hljs-keyword">of</span>, <span class="hljs-keyword">is</span> used by / Margarita
+</code></pre>
+<p>This service can be called using the following code snippets:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="46-tab" data-group="group_45" data-tab="tabpanel_46">cURL</div><div class="nav-link" id="47-tab" data-group="group_45" data-tab="tabpanel_47">Java</div><div class="nav-link" id="48-tab" data-group="group_45" data-tab="tabpanel_48">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_45" tabindex="-1" id="tabpanel_46"><div><span><pre><code class="hljs">curl -X GET \
+  'https://qanswer-core<span class="hljs-number">1</span>.univ-st-etienne.fr/api/sparqltouser/cocktails?sparql=SELECT<span class="hljs-symbol">%20</span>DISTINCT<span class="hljs-symbol">%20</span>?s<span class="hljs-number">1</span><span class="hljs-symbol">%20</span>where<span class="hljs-symbol">%20</span>{<span class="hljs-symbol">%20</span><span class="hljs-symbol">%0</span>A<span class="hljs-symbol">%20</span><span class="hljs-symbol">%20</span><span class="hljs-symbol">%20</span><span class="hljs-symbol">%20</span>?s<span class="hljs-number">1</span><span class="hljs-symbol">%20</span>?p<span class="hljs-number">1</span><span class="hljs-symbol">%20</span><span class="hljs-symbol">%3</span>Chttp://vocabulary.semantic-web.at/cocktail-ontology/Ingredients<span class="hljs-symbol">%3</span>E<span class="hljs-symbol">%20</span>.<span class="hljs-symbol">%0</span>A<span class="hljs-symbol">%20</span><span class="hljs-symbol">%20</span><span class="hljs-symbol">%20</span><span class="hljs-symbol">%20</span>?s<span class="hljs-number">1</span><span class="hljs-symbol">%20</span>?p<span class="hljs-number">2</span><span class="hljs-symbol">%20</span><span class="hljs-symbol">%3</span>Chttp://vocabulary.semantic-web.at/cocktails/<span class="hljs-number">2</span>d<span class="hljs-number">85</span>fb<span class="hljs-number">1</span>b<span class="hljs-number">-96</span>cb<span class="hljs-number">-4</span><span class="hljs-keyword">c</span><span class="hljs-number">48</span><span class="hljs-number">-8</span>df<span class="hljs-number">5</span><span class="hljs-number">-707032</span>f<span class="hljs-number">34e71</span><span class="hljs-symbol">%3</span>E<span class="hljs-symbol">%20</span>.<span class="hljs-symbol">%20</span><span class="hljs-symbol">%0</span>A}<span class="hljs-symbol">%0</span>Alimit<span class="hljs-symbol">%201000</span>&amp;lang=en' \
+  -H 'Accept: */*' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi....' \
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_45" tabindex="-1" id="tabpanel_47"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&amp;topk=5&amp;language=en"</span>)
+  .<span class="hljs-builtin-name">get</span>()
+  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUz..."</span>)
+  .build();
+
+Response response = client.newCall(request).execute();
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_45" tabindex="-1" id="tabpanel_48"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&amp;topk=5&amp;language=en"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUz...."</span>,
+  }
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>the result is:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"sparql"</span>: <span class="hljs-string">"SELECT DISTINCT ?s1 where { \n    ?s1 ?p1 &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Ingredients&gt; .\n    ?s1 ?p2 &lt;http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&gt; . \n}\nlimit 1000"</span>,
+    <span class="hljs-attr">"lang"</span>: <span class="hljs-string">"en"</span>,
+    <span class="hljs-attr">"kb"</span>: <span class="hljs-string">"cocktails"</span>,
+    <span class="hljs-attr">"interpretation"</span>: <span class="hljs-string">"type / Ingredients\n / is part of, is used by / Margarita"</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="summa-server"></a><a href="#summa-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summa Server</h2>
+<p>The second service that is put in place is the Summa Server. The Summa Server summarizes
+entities, i.e. extract top-k RDF facts associated to an entity. For example the summary of:
+<a href="http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71">http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71</a>
+can be accessed as follows:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="50-tab" data-group="group_49" data-tab="tabpanel_50">cURL</div><div class="nav-link" id="51-tab" data-group="group_49" data-tab="tabpanel_51">Java</div><div class="nav-link" id="52-tab" data-group="group_49" data-tab="tabpanel_52">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_49" tabindex="-1" id="tabpanel_50"><div><span><pre><code class="hljs">curl -X GET <span class="hljs-string">\</span>
+  <span class="hljs-string">'https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&amp;topk=5&amp;language=en'</span> <span class="hljs-string">\</span>
+  -H <span class="hljs-string">'Authorization: Bearer eyJhbGciOiJI....'</span> <span class="hljs-string">\</span>
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_49" tabindex="-1" id="tabpanel_51"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&amp;topk=5&amp;language=en"</span>)
+  .<span class="hljs-builtin-name">get</span>()
+  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUz..."</span>)
+  .build();
+
+Response response = client.newCall(request).execute();
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_49" tabindex="-1" id="tabpanel_52"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&amp;topk=5&amp;language=en"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUz...."</span>,
+  }
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>the result is:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"subject"</span>: {
+        <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71"</span>,
+        <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Margarita"</span>
+    },
+    <span class="hljs-attr">"facts"</span>: [
+        {
+            <span class="hljs-attr">"predicate"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"type"</span>
+            },
+            <span class="hljs-attr">"object"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://www.w3.org/2004/02/skos/core#Concept"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Concept"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"predicate"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://purl.org/dc/terms/contributor"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Contributor"</span>
+            },
+            <span class="hljs-attr">"object"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://resource.semantic-web.at/user/gablers"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"http://resource.semantic-web.at/user/gablers"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"predicate"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://purl.org/dc/terms/creator"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Creator"</span>
+            },
+            <span class="hljs-attr">"object"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://localhost/user/blumauera"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"http://localhost/user/blumauera"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"predicate"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://schema.semantic-web.at/ppt/inScheme"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"http://schema.semantic-web.at/ppt/inScheme"</span>
+            },
+            <span class="hljs-attr">"object"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://vocabulary.semantic-web.at/cocktails/8d052dfc-44bf-4985-8ce3-4564570a161b"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"All about Cocktails"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"predicate"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"type"</span>
+            },
+            <span class="hljs-attr">"object"</span>: {
+                <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail"</span>,
+                <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Cocktail"</span>
+            }
+        }
+    ]
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#sparqltouser">SparqlToUser</a></li><li><a href="#summa-server">Summa Server</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/en/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/en/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

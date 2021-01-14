@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Quick Introduction · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Now we made a node about ourself, so let&#x27;s attach something to it ...&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Quick Introduction · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;Now we made a node about ourself, so let&#x27;s attach something to it ...&lt;/p&gt;
+"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Hands-on Session 1</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc0">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 1</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.1">Create a Playground</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.2">Create our first node</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/QA-ESWC2021/docs/quick1.3">Create our first relation</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.4">My creativity ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.5">Learning a bit ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.6">Making it prettier</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.7">Free me in the WWW</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 2</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.1">Part 1 (RDF to QA)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.2">Part 2 (Signup and Login)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.3">Part 3 (Upload and index)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.4">Part 4 (Query)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.5">Part 5 (Feedback and train)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.6">Part 6 (Contextual information)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.7">Part 7 (Additional services)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Terms of Use</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/termsOfUse">Terms of use</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Quick Introduction</h1></header><article><div><span><p>Now we made a node about ourself, so let's attach something to it ...</p>
+<p>I want for example to add which languages I speak. So I will create some nodes for the languages I speak:</p>
+<pre><code class="hljs">qa:node2 rdfs:<span class="hljs-keyword">label</span><span class="bash"> <span class="hljs-string">"English"</span> .</span>
+qa:node3 rdfs:<span class="hljs-keyword">label</span><span class="bash"> <span class="hljs-string">"French"</span> .</span>
+qa:node4 rdfs:<span class="hljs-keyword">label</span><span class="bash"> <span class="hljs-string">"German"</span> .</span>
+qa:node5 rdfs:<span class="hljs-keyword">label</span><span class="bash"> <span class="hljs-string">"Italian"</span> .</span>
+</code></pre>
+<p>and a new property to express which languages I speak:</p>
+<pre><code class="hljs"><span class="hljs-string">qa:</span>language <span class="hljs-string">rdfs:</span>label <span class="hljs-string">"speaks language"</span> .
+<span class="hljs-string">qa:</span>language <span class="hljs-string">skos:</span>altLabel <span class="hljs-string">"speak"</span> .
+<span class="hljs-string">qa:</span>language <span class="hljs-string">skos:</span>altLabel <span class="hljs-string">"language"</span> .
+
+</code></pre>
+<p>and use it:</p>
+<pre><code class="hljs"><span class="hljs-variable">@prefix</span> <span class="hljs-attribute">rdfs</span>: &lt;<span class="hljs-attribute">http</span>:<span class="hljs-comment">//www.w3.org/2000/01/rdf-schema#&gt; .</span>
+<span class="hljs-variable">@prefix</span> <span class="hljs-attribute">qa</span>: &lt;<span class="hljs-attribute">http</span>:<span class="hljs-comment">//qanswer.eu/&gt; .</span>
+
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node2 .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node3 .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node4 .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node5 .
+
+</code></pre>
+<p>So the last triples encode that &quot;QAnswer speaks English, French, German and Italian&quot;.</p>
+<p>NOTE: If you were really careful you could have thought: This property looks like a node?!?! Yes it is true, the only difference that makes <code>qa:language</code> a property is that we put it between two nodes ....</p>
+<p>What can we ask now?</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="63-tab" data-group="group_62" data-tab="tabpanel_63">Question 1</div><div class="nav-link" id="64-tab" data-group="group_62" data-tab="tabpanel_64">Question 2</div><div class="nav-link" id="65-tab" data-group="group_62" data-tab="tabpanel_65">Question 3</div><div class="nav-link" id="66-tab" data-group="group_62" data-tab="tabpanel_66">Question 4</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_62" tabindex="-1" id="tabpanel_63"><div><span><p><img src="/QA-ESWC2020/img/screenshots/quick/question3.png" width="80%"></p>
+</span></div></div><div class="tab-pane" data-group="group_62" tabindex="-1" id="tabpanel_64"><div><span><p><img src="/QA-ESWC2020/img/screenshots/quick/question4.png" width="80%"></p>
+</span></div></div><div class="tab-pane" data-group="group_62" tabindex="-1" id="tabpanel_65"><div><span><p><img src="/QA-ESWC2020/img/screenshots/quick/question5.png" width="80%"></p>
+</span></div></div><div class="tab-pane" data-group="group_62" tabindex="-1" id="tabpanel_66"><div><span><p><img src="/QA-ESWC2020/img/screenshots/quick/question6.png" width="80%"></p>
+</span></div></div></div></div><div><span><p>Ok, I guess now it should be clear how to add more information about yourself .... try out your creativity!</p>
+<p>This is how far we got for now:</p>
+<pre><code class="hljs"><span class="hljs-variable">@prefix</span> <span class="hljs-attribute">rdfs</span>: &lt;<span class="hljs-attribute">http</span>:<span class="hljs-comment">//www.w3.org/2000/01/rdf-schema#&gt; .</span>
+<span class="hljs-variable">@prefix</span> <span class="hljs-attribute">skos</span>: &lt;<span class="hljs-attribute">http</span>:<span class="hljs-comment">//www.w3.org/2004/02/skos/core#&gt; .</span>
+<span class="hljs-variable">@prefix</span> <span class="hljs-attribute">qa</span>: &lt;<span class="hljs-attribute">http</span>:<span class="hljs-comment">//qanswer.eu/&gt; .</span>
+
+#Making our first node
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"QAnswer"</span> .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">skos</span>:altLabel <span class="hljs-string">"QAnswer KG"</span> .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">skos</span>:altLabel <span class="hljs-string">"QA"</span> .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">skos</span>:altLabel <span class="hljs-string">"you"</span> .
+
+#Adding some additional nodes
+<span class="hljs-attribute">qa</span>:node2 <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"English"</span> .
+<span class="hljs-attribute">qa</span>:node3 <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"French"</span> .
+<span class="hljs-attribute">qa</span>:node4 <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"German"</span> .
+<span class="hljs-attribute">qa</span>:node5 <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"Italian"</span> .
+
+#Creating our first property
+<span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"speaks language"</span> .
+<span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">skos</span>:altLabel <span class="hljs-string">"speak"</span> .
+<span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">skos</span>:altLabel <span class="hljs-string">"language"</span> .
+
+#Saying that QAnswer speaks English, Franch, German and Italian
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node2 .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node3 .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node4 .
+<span class="hljs-attribute">qa</span>:node1 <span class="hljs-attribute">qa</span>:language <span class="hljs-attribute">qa</span>:node5 .
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/QA-ESWC2021/docs/quick1.2"><span class="arrow-prev">← </span><span>Create our first node</span></a><a class="docs-next button" href="/QA-ESWC2021/docs/quick1.4"><span>My creativity ....</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/en/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/en/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

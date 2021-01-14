@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Learning a bit .... · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;While writing down the Knwoledge Graph about myself, and asking questions, I noted that there were some problems.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Learning a bit .... · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;While writing down the Knwoledge Graph about myself, and asking questions, I noted that there were some problems.&lt;/p&gt;
+"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Hands-on Session 1</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc0">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 1</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.1">Create a Playground</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.2">Create our first node</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.3">Create our first relation</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.4">My creativity ....</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/QA-ESWC2021/docs/quick1.5">Learning a bit ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.6">Making it prettier</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.7">Free me in the WWW</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 2</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.1">Part 1 (RDF to QA)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.2">Part 2 (Signup and Login)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.3">Part 3 (Upload and index)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.4">Part 4 (Query)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.5">Part 5 (Feedback and train)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.6">Part 6 (Contextual information)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.7">Part 7 (Additional services)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Terms of Use</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/termsOfUse">Terms of use</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Learning a bit ....</h1></header><article><div><span><p>While writing down the Knwoledge Graph about myself, and asking questions, I noted that there were some problems.
+Maybe the same happend to you!</p>
+<p>Mainly two things happened ...</p>
+<h2><a class="anchor" aria-hidden="true" id="1-the-knowledge-is-not-encoded-correctly"></a><a href="#1-the-knowledge-is-not-encoded-correctly" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1 The Knowledge is not encoded correctly</h2>
+<p>At some point for example I wrote:</p>
+<pre><code class="hljs"><span class="hljs-attribute">qa</span>:birthPlace <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"born"</span> .
+<span class="hljs-attribute">qa</span>:birthPlace <span class="hljs-attribute">skos</span>:altLabel <span class="hljs-string">"birth place"</span> .
+
+#create node Saint-Etienne
+<span class="hljs-attribute">qa</span>:saintEtienne <span class="hljs-attribute">rdfs</span>:label <span class="hljs-string">"Saint-Etienne"</span> .
+
+#born in Saint-Etienne
+<span class="hljs-attribute">qa</span>:node2 <span class="hljs-attribute">qa</span>:birthPlace <span class="hljs-attribute">qa</span>:saintEtienne . 
+</code></pre>
+<p>Do you see the error? The problem is the last triple, instead of writing</p>
+<pre><code class="hljs"><span class="hljs-selector-id">#born</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">Saint-Etienne</span>
+<span class="hljs-selector-tag">qa</span><span class="hljs-selector-pseudo">:node1</span> <span class="hljs-selector-tag">qa</span><span class="hljs-selector-pseudo">:birthPlace</span> <span class="hljs-selector-tag">qa</span><span class="hljs-selector-pseudo">:saintEtienne</span> . 
+</code></pre>
+<p>i.e. that QAnswer was born in Saint-Etienne, I wrote</p>
+<pre><code class="hljs"><span class="hljs-selector-id">#born</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">Saint-Etienne</span>
+<span class="hljs-selector-tag">qa</span><span class="hljs-selector-pseudo">:node2</span> <span class="hljs-selector-tag">qa</span><span class="hljs-selector-pseudo">:birthPlace</span> <span class="hljs-selector-tag">qa</span><span class="hljs-selector-pseudo">:saintEtienne</span> . 
+</code></pre>
+<p>i.e. that English was born in Saint-Etienne. So clearly we will not get a meaningful answer if
+the knowledge is not encoded correctly. So one important thing is: &quot;Check that your knowledge is encoded correctly!&quot;</p>
+<h2><a class="anchor" aria-hidden="true" id="2-the-interpretation-is-wrong"></a><a href="#2-the-interpretation-is-wrong" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 The interpretation is wrong</h2>
+<p>The second thing that happened was that some questions where interpreted wrongly even if the knowledge was encoded
+correctly. When I asked &quot;Where are you born?&quot;
+I got:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/quick/quick1.5.png" width="80%"></p>
+<p>But I asked &quot;where&quot;, not &quot;when&quot;! and the information in the Knowledge Graph was correct!
+In this case when I clicked on &quot;SPARQL query&quot; I found the right interpretation:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/quick/quick1.5_2.png" width="80%"></p>
+<p>You see it, it is the 3rd one! When I clicked on it I got the right answer:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/quick/quick1.5_3.png" width="80%"></p>
+<p>It is important at this step to tell that this is the right interpretation, not the previous one! So
+I clicked on &quot;Is this answer right?&quot; -&gt; Yes. It is good to do that because you create a training
+data set, and the quality of the answers get better. I always do it! When I click on &quot;Training Evaluation&quot;
+I can see all things I asked:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/quick/quick1.5_4.png" width="80%"></p>
+<p>In green the ones that are currently right, in red the ones that are wrong. But after clicking on &quot;Train&quot; I
+got</p>
+<p><img src="/QA-ESWC2020/img/screenshots/quick/quick1.5_5.png" width="80%"></p>
+<p>Cool now all questions are answered correctly, and when I ask:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/quick/quick1.5_6.png" width="80%"></p>
+<p>I get the right answer.</p>
+<p>Note 1: The algorithm didn't see this before, it generallized!
+Note 2: In this KG there are 6 relations and you will need around 20 training examples ....</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/QA-ESWC2021/docs/quick1.4"><span class="arrow-prev">← </span><span>My creativity ....</span></a><a class="docs-next button" href="/QA-ESWC2021/docs/quick1.6"><span>Making it prettier</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-the-knowledge-is-not-encoded-correctly">1 The Knowledge is not encoded correctly</a></li><li><a href="#2-the-interpretation-is-wrong">2 The interpretation is wrong</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/en/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/en/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

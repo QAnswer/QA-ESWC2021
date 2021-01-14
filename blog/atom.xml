@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://QAnswer.github.io/QA-ESWC2021/blog</id>
+    <title>QA Tutorial @ ESWC 2021 Blog</title>
+    <updated>1970-01-01T00:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://QAnswer.github.io/QA-ESWC2021/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest QA Tutorial @ ESWC 2021 news and events.</subtitle>
+    <logo>https://QAnswer.github.io/QA-ESWC2021/img/favicon.ico</logo>
+    <rights>Copyright © 2021 QAnswer</rights>
+    <entry>
+        <title type="html"><![CDATA[QAnswer at The Web Conference 2019]]></title>
+        <id>https://QAnswer.github.io/QA-ESWC2021/blog/15/05/2019.html</id>
+        <link href="https://QAnswer.github.io/QA-ESWC2021/blog/15/05/2019.html">
+        </link>
+        <updated>1970-01-01T00:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>We are happy to show the latest features of QAnswer at The Web Conference 2019! We have worked a lot to make the search better and to be able to query new datasets and languages.</p> <p><img src="/img/blog/15-05-2019/image.jpg" width="80%"></p> <p>Here the key new features:</p> <ul> <li>We are quering more languages including al...</li></ul>]]></summary>
+        <author>
+            <name>Dennis Diefenbach</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[QAnswer Community]]></title>
+        <id>https://QAnswer.github.io/QA-ESWC2021/blog/04/06/2019.html</id>
+        <link href="https://QAnswer.github.io/QA-ESWC2021/blog/04/06/2019.html">
+        </link>
+        <updated>2019-04-06T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>It took some time ... but we finished setting up a forum where people can ask questions related to QAnswer. You have a problem uploading your own dataset? You do are searching for a particular API? The Machine Learining model does not converge to wha...</p>]]></summary>
+        <author>
+            <name>Dennis Diefenbach</name>
+        </author>
+    </entry>
+</feed>

@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tutorial: Feedback and Train · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Each time you ask a question the system generate interpretations and computes a confidence. A list of different interpretations can be show by clicking on&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tutorial: Feedback and Train · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;Each time you ask a question the system generate interpretations and computes a confidence. A list of different interpretations can be show by clicking on&lt;/p&gt;
+"/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Hands-on Session 2</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc0">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 1</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.1">Create a Playground</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.2">Create our first node</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.3">Create our first relation</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.4">My creativity ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.5">Learning a bit ....</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.6">Making it prettier</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/quick1.7">Free me in the WWW</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Hands-on Session 2</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.1">Part 1 (RDF to QA)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.2">Part 2 (Signup and Login)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.3">Part 3 (Upload and index)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.4">Part 4 (Query)</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/QA-ESWC2021/docs/doc1.5">Part 5 (Feedback and train)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.6">Part 6 (Contextual information)</a></li><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/doc1.7">Part 7 (Additional services)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Terms of Use</h3><ul class=""><li class="navListItem"><a class="navItem" href="/QA-ESWC2021/docs/termsOfUse">Terms of use</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tutorial: Feedback and Train</h1></header><article><div><span><p>Each time you ask a question the system generate interpretations and computes a confidence. A list of different interpretations can be show by clicking on
+&quot;SPARQL List&quot;. The confidence is shown in the bar at the top left. The system believes the answer is correct if the confidence
+is bigger than 50% and wrong if it is lower than 50%.</p>
+<p>By using the feedback functionality, i.e. by replaying to the question: &quot;Is this the right answer? Yes No&quot;, the system can learn to choose the right interpretation
+and correctly compute the confidence.</p>
+<p>When asking &quot;Give me all cocktails?&quot; as a response &quot;Cocktail&quot; is given, i.e. the system understood that we search for general information about &quot;Cocktail&quot; which
+would correspond to the question &quot;What is a Cocktail?&quot;. By clicking on &quot;SPARQL List&quot; all generated interpretations can be shown:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/sparql_list.png" width="80%"></p>
+<p>In particular the second returns all things that are of type &quot;Cocktail&quot;. This is the interpretation we are searching for. By clicking on this interpretation we get:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/question_wrong2.png" width="80%"></p>
+<p>Which gives a long list of cocktails but with low confidence. By using the feedback functionality, i.e. by replaying to the question: &quot;Is this the right answer? Yes&quot;,
+the system will save the given example.</p>
+<p>After asking a set of questions, and by giving feedback you will have created a training set. A training set for the cocktail dataset can be downloaded
+<a href="/QA-ESWC2020/questions_cocktail.json">here</a>. It can be uploaded from the <a href="https://qanswer-frontend.univ-st-etienne.fr/user/profile">profile page</a> using the &quot;Upload Questions&quot; button.</p>
+<p>By clicking on &quot;Training Evaluation&quot; in your
+<a href="https://qanswer-frontend.univ-st-etienne.fr/user/profile">profile</a> you have an overview of how the system performs on the questions you gave feedback.</p>
+<p><img src="/QA-ESWC2020/img/screenshots/evaluation1.png" width="80%"></p>
+<p>After clicking on &quot;Train&quot; the system will create a model that adapts to your dataset:</p>
+<p><img src="/QA-ESWC2020/img/screenshots/evaluation2.png" width="80%"></p>
+<p>Note that the model will generalize also over questions you didn't ask.</p>
+<p>Now you learned how to give feedback to the system and how this feedback can be used to adapt QAnswer to your dataset.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/QA-ESWC2021/docs/doc1.4"><span class="arrow-prev">← </span><span>Part 4 (Query)</span></a><a class="docs-next button" href="/QA-ESWC2021/docs/doc1.6"><span>Part 6 (Contextual information)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/QA-ESWC2021/" class="nav-home"><img src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021" width="66" height="58"/></a><div><h5>Docs</h5><a href="/QA-ESWC2021/docs/en/quick1.1.html">Hands-on session I</a><a href="/QA-ESWC2021/docs/en/doc1.1.html">Hands-on session II</a></div><div><h5>Community</h5><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="http://qanswer.eu">QAnswer</a><a href="http://github.com/QAnswer">GitHub</a><a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div></div></section><section class="copyright">Copyright © 2021 QAnswer</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
