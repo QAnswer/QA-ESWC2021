@@ -64,7 +64,7 @@ class HomeSplash extends React.Component {
                 <div className="inner">
                     <ProjectTitle siteConfig={siteConfig} />
                     <PromoSection>
-                        <Button href="https://qanswer-frontend.univ-st-etienne.fr/qa/full?query=In%20which%20country%20is%20ESWC%202020%3F&tags=%5B%5D&lang=en&kb=wikidata%2Copenstreetmap&user=open%2Copen">Try It Out</Button>
+                        <Button href="https://qanswer-frontend.univ-st-etienne.fr/qa/full?query=who%20are%20the%20organizers%20of%20%20eswc%202021%3F&tags=%5B%5D&lang=en&kb=wikidata&user=open">Try It Out</Button>
                         {/*<Button href={docUrl('doc0.html')}>Get started</Button>*/}
                     </PromoSection>
                 </div>
