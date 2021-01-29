@@ -8,10 +8,10 @@
 const React = require('react');
 
 class Footer extends React.Component {
-    docUrl(doc, language) {
-        const baseUrl = this.props.config.baseUrl;
-        const docsUrl = this.props.config.docsUrl;
-        const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
+        docUrl(doc, language) {
+                const baseUrl = this.props.config.baseUrl;
+                const docsUrl = this.props.config.docsUrl;
+                const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
         const langPart = `${language ? `${language}/` : ''}`;
         return `${baseUrl}${docsPart}${langPart}${doc}`;
     }
@@ -37,12 +37,7 @@ class Footer extends React.Component {
                     </a>
                     <div>
                         <h5>Docs</h5>
-                        <a href={this.docUrl('quick1.1.html', this.props.language)}>
-                            Hands-on session I
-                        </a>
-                        <a href={this.docUrl('doc1.1.html', this.props.language)}>
-                            Hands-on session II
-                        </a>
+                        <span style="color:#FFF;">coming soon</span>
                     </div>
                     <div>
                         <h5>Community</h5>
@@ -55,18 +50,12 @@ class Footer extends React.Component {
                     </div>
                     <div>
                         <h5>More</h5>
-                        <a href="http://qanswer.eu">QAnswer</a>
-                        <a href="http://github.com/QAnswer">GitHub</a>
-                        <a
-                            className="github-button"
-                            href={this.props.config.repoUrl}
-                            data-icon="octicon-star"
-                            data-count-href="/facebook/docusaurus/stargazers"
-                            data-show-count="true"
-                            data-count-aria-label="# stargazers on GitHub"
-                            aria-label="Star this project on GitHub">
-                            Star
-                        </a>
+                        <div>
+                            <a href="http://qanswer.eu">QAnswer</a>
+                            <a href="http://github.com/QAnswer">QAnswer @ GitHub</a>
+                            <a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a>
+                            <div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div>
+                        </div>
                         {this.props.config.twitterUsername && (
                             <div className="social">
                                 <a
@@ -76,6 +65,10 @@ class Footer extends React.Component {
                                 </a>
                             </div>
                         )}
+                        <div>
+                            <a href="http://github.com/Qanary">Qanary @ GitHub</a>
+                            <a href="http://github.com/Qanary-question-answering-components">Qanary Components @ GitHub</a>
+                        </div>
                     </div>
                 </section>
                 <section className="copyright">{this.props.config.copyright}</section>
