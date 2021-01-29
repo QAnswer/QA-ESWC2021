@@ -37,7 +37,7 @@ class Footer extends React.Component {
                     </a>
                     <div>
                         <h5>Docs</h5>
-                        <span style="color:#FFF;">coming soon</span>
+                        <span style={{color: '#FFF'}}>coming soon</span>
                     </div>
                     <div>
                         <h5>Community</h5>
@@ -53,10 +53,8 @@ class Footer extends React.Component {
                         <div>
                             <a href="http://qanswer.eu">QAnswer</a>
                             <a href="http://github.com/QAnswer">QAnswer @ GitHub</a>
-                            <a class="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a>
-                            <div class="social"><a href="https://twitter.com/QAnswer21634063" class="twitter-follow-button">Follow @QAnswer21634063</a></div>
-                        </div>
-                        {this.props.config.twitterUsername && (
+                            <a className="github-button" href="http://github.com/QAnswer" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a>
+                            {this.props.config.twitterUsername && (
                             <div className="social">
                                 <a
                                     href={`https://twitter.com/${this.props.config.twitterUsername}`}
@@ -64,10 +62,13 @@ class Footer extends React.Component {
                                     Follow @{this.props.config.twitterUsername}
                                 </a>
                             </div>
-                        )}
+                            )}
+                        </div>
                         <div>
-                            <a href="http://github.com/Qanary">Qanary @ GitHub</a>
-                            <a href="http://github.com/Qanary-question-answering-components">Qanary Components @ GitHub</a>
+                            <a href="https://github.com/WDAqua/Qanary">Qanary @ GitHub</a>
+                            <a className="github-button" href="https://github.com/WDAqua/Qanary" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a>
+                            <a href="https://github.com/WDAqua/Qanary-question-answering-components">Qanary Components @ GitHub</a>
+                            <a className="github-button" href="https://github.com/WDAqua/Qanary-question-answering-components" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a>
                         </div>
                     </div>
                 </section>
