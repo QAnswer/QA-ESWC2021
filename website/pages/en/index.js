@@ -14,10 +14,10 @@ const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
 class HomeSplash extends React.Component {
-    render() {
-        const {siteConfig, language = ''} = this.props;
-        const {baseUrl, docsUrl} = siteConfig;
-        const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
+        render() {
+                const { siteConfig, language = '' } = this.props;
+                const { baseUrl, docsUrl } = siteConfig;
+                const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
         const langPart = `${language ? `${language}/` : ''}`;
         const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
@@ -191,7 +191,7 @@ class Index extends React.Component {
                                 content:
                                     '**Knowledge Graphs** are designed to be easily consumed by machines, but they are not easily accessible by end-users. **Question Answering (QA)** over Knowledge Graphs (KGs) is seen as a technology able to bridge the gap between end-users and Knowledge Graphs. In the last years a lot of research was carried out to solve the problem of QA over KGs, but constructing a QA system over a new KG for non-expert users is still not easy.\n' +
                                     '\n' +
-                                    'The aim of this tutorial is to address this issue. We will show how recently developed technologies, like **QAnswer** and **Qanary**, allow constructing, customizing, evaluating, and optimizing QA systems on RDF datasets using a lightweight approach.',
+                                    'The aim of this tutorial is to address this issue. We will show how recently developed technologies, like **<a href="https://www.qanswer.eu/">QAnswer</a>** and the **<a href="https://github.com/WDAqua/Qanary">Qanary</a>** framework, allow constructing, customizing, evaluating, and optimizing QA systems on RDF datasets using a lightweight approach.',
                                 image: `${baseUrl}img/where.png`,
                                 imageAlign: 'right',
                                 title: 'Description',
@@ -201,40 +201,47 @@ class Index extends React.Component {
                     <Block align="left">
                         {[
                             {
-                                content:
+                                title: 'First draft of a schedule 2021',
+                                content: ''
+                                + '<p><strong>10:00h:</strong> Starting</p>\n'
 
-                                    ' **10:00 Starting**\n' +
-                                    '\n' +
-                                    ' ---**10 min -** Introduction and people gathering\n' +
-                                    '\n' +
-                                    ' ---**25 min -** <a href="/QA-ESWC2020/presentation0.pdf">Keynote and introduction into the field of Question Answering (general principles and variations)</a>\n' +
-                                    '\n' +
-                                    ' ---**25 min -** <a href="/QA-ESWC2020/presentation1.pdf">Understanding the tasks of QA over KGs</a> \n' +
-                                    '\n' +
-                                    '**11:00-11:30 Coffee break**\n' +
-                                    '\n' +
-                                    ' ---**60 min -** <a href="/QA-ESWC2020/docs/quick1.1">Hands-on session I:</a> We are using QAnswer to create your own **Digital Twin**!\n' +
-                                    '\n' +
-                                    ' **13:00-14:00 Lunch break** \n' +
-                                    '\n' +
-                                    ' ---**30 min -** <a href="/QA-ESWC2020/presentation2.pdf">QAnswer: how it works?</a>\n' +
-                                    '\n' +
-                                    ' ---**15 min -** <a href="/QA-ESWC2020/presentation3.pdf">Talk: Construct a Question Answering system on the Covid-19 dataset.</a> \n' +
-                                    '\n' +
-                                    ' ---**15 min -** Examples: other QA systems. \n' +
-                                    '\n' +
-                                    '**15:00-15:30 Coffee break**\n' +
-                                    '\n' +
-                                    ' ---**15 min -** Gathering and discussion of the participants to defined particular goals for developing an individual Question Answering system\n' +
-                                    '\n' +
-                                    ' ---**60 min -** <a href="/QA-ESWC2020/docs/doc1.1">Hands-on session II:</a> Construct a Question Answering System either on your dataset or on a dataset provided.\n' +
-                                    '\n' +
-                                    ' ---**15 min -** Presentation of final results (i.e., the created Question Answering systems)\n' +
-                                    '\n' +
-                                    ' **17:00 End**\n',
+                                + '<ul>\n'
+                                + '    <li><strong>10 min:</strong> Introduction and people gathering</li>\n'
+                                + '    <li><strong>25 min:</strong> Keynote and introduction into the field of Question Answering (general principles and variations)</li>\n'
+                                + '    <li><strong>25 min:</strong> Understanding the tasks of QA over KGs</li>\n'
+                                + '</ul>\n'
+                                
+                                + '<p><strong>11:00-11:15h:</strong> Coffee break</p>\n'
+                                
+                                + '<ul>\n'
+                                + '    <li><strong>60 min:</strong> Build a Question Answering system using QAnswer and the Qanary framework (overview by using an example)</li>\n'
+                                + '</ul>\n'
+                                
+                                + '<p><strong>12:15-13:15h:</strong> Lunch break</p>\n'
+                                
+                                + '<ul>\n'
+                                + '    <li><strong>30 min:</strong> QAnswer: How it works?</li>\n'
+                                + '    <li><strong>60 min:</strong> Hands-on session: Create your own Digital Twin using QAnswer-based query engine!</li>\n'
+                                + '</ul>\n'
+                                
+                                + '<p><strong>14:45-15:00h:</strong> Coffee break</p>\n'
+                                
+                                + '<ul>\n'
+                                + '    <li><strong>30 min:</strong> Qanary: How it works?</li>\n'
+                                + '    <li><strong>60 min:</strong> Hands-on session: Establish, extend, measure, and improve a Question Answering system using the Qanary framework!</li>\n'
+                                + '</ul>\n'
+                                
+                                + '<p><strong>16:30-16:45h:</strong> Coffee break</p>\n'
+                                
+                                + '<ul>\n'
+                                + '    <li><strong>15 min:</strong> Presentation of final results (i.e., examples of the QA systems that we created in our tutorial)</li>\n'
+                                + '    <li><strong>15 min:</strong> Outlook on research questions in the field of Question Answering</li>\n'
+                                + '    <li><strong>15 min:</strong> Closing, followed by open space discussion</li>\n'
+                                + '</ul>\n'
+                                
+                                <+ 'p><strong>17:30h / Open End</strong></p>\n',
                                 //image: `${baseUrl}img/docusaurus.svg`,
                                 imageAlign: 'right',
-                                title: 'First draft of a schedule 2021',
                             },
                         ]}
                     </Block>
@@ -250,13 +257,13 @@ class Index extends React.Component {
                                 image: `${baseUrl}img/Andreas_Both.jpg`,
                                 imageAlign: 'top',
                                 title: 'Andreas Both',
-                                content: 'Andreas Both is a professor in Computer Scientist at the Anhalt Univer- sity of Applied Science (Germany) and the Head of Research at DATEV a large business software company located in Germany. At Web-driven com- panies he has worked for many years in leading research and development positions on different aspects of modern Web technologies. In particular, data-driven processes, data integration, information retrieval applications, and web engineering topics are his fields of research. He commits himself to advance in using the World Wide Web as a knowledge base and devel- oping the next generation of Web applications to open the capabilities of the WWW for both industry and users.'
+                                content: '<a href="http://www.andreasboth.de/en">Andreas Both</a> is a professor in Computer Science at the <a href="https://www.hs-anhalt.de/en/start-page.html">Anhalt University of Applied Science</a> (Germany) and the Head of Research at <a href="http://www.datev.com">DATEV</a> a large business software company located in Germany. At Web-driven companies he has worked for many years in leading research and development positions on different aspects of modern Web technologies. In particular, data-driven processes, data integration, information retrieval applications, and web engineering topics are his fields of research. He commits himself to advance in using the World Wide Web as a knowledge base and developing the next generation of Web applications to open the capabilities of the Web for both industry and users. He is one of the main contributors to the <a href="https://github.com/WDAqua/Qanary">Qanary framework</a> and the <a href="https://github.com/WDAqua/Qanary-question-answering-components">Qanary component ecosystem</a>.'
                             },
                             {
                                 image: `${baseUrl}img/Pierre_Maret.jpg`,
                                 imageAlign: 'top',
                                 title: 'Pierre Maret',
-                                content: 'Pierre Maret is a professor in Computer Science at the University of Lyon-Saint Etienne (France), Laboratory Hubert Curien, where he is lead- ing the team Knowledge Representation and Reasoning. His background is on Knowledge Management, Data Modeling and Artificial Intelligence. He has been leading the French side of the ITN Marie-Slokowska Curie WDAqua. He is also involved into scientific collaborations with industrial partners.'
+                                content: '<a href="https://perso.univ-st-etienne.fr/mapi9921/">Pierre Maret</a> is a professor in Computer Science at the <a href="https://www.univ-st-etienne.fr/en/index.html">University of Lyon-Saint Etienne (France)</a>, Laboratory Hubert Curien, where he is lead- ing the team Knowledge Representation and Reasoning. His background is on Knowledge Management, Data Modeling and Artificial Intelligence. He has been leading the French side of the WDAqua ITN (a Marie Skłodowska-Curie Innovative Training Network). He is also involved into scientific collaborations with industrial partners.'
                             },
                         ]}
                     </Block>
