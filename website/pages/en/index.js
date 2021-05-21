@@ -201,7 +201,7 @@ class Index extends React.Component {
                     <Block align="left">
                         {[
                             {
-                                title: 'First draft of a schedule 2021',
+                                title: 'First draft of a schedule for the tutorial on 2021-06-07 (Monday).',
                                 content: ''
                                 + '<p><strong>10:00h:</strong> Starting</p>\n'
 
