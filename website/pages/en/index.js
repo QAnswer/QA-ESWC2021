@@ -265,6 +265,18 @@ class Index extends React.Component {
                                 title: 'Pierre Maret',
                                 content: '<a href="https://perso.univ-st-etienne.fr/mapi9921/">Pierre Maret</a> is a professor in Computer Science at the <a href="https://www.univ-st-etienne.fr/en/index.html">University of Lyon-Saint Etienne (France)</a>, Laboratory Hubert Curien, where he is lead- ing the team Knowledge Representation and Reasoning. His background is on Knowledge Management, Data Modeling and Artificial Intelligence. He has been leading the French side of the WDAqua ITN (a Marie Skłodowska-Curie Innovative Training Network). He is also involved into scientific collaborations with industrial partners.'
                             },
+                            {
+                                image: `${baseUrl}img/Aleksandr_Perevalov.jpg`,
+                                imageAlign: 'top',
+                                title: 'Aleksandr Perevalov',
+                                content: '<a href="https://www.hs-anhalt.de/en/university/service/directory-of-people/aleksandr-perevalov.html">Aleksandr Perevalov</a> is a Ph.D. student in Computer Science at the <a href="https://www.hs-anhalt.de/en/start-page.html">Anhalt University of Applied Science</a> (Germany). His research activities are dedicated to Question Answering and Data Science.'
+                            },
+                            {
+                                image: `${baseUrl}img/pixabay-person-1824144_640.png`,
+                                imageAlign: 'top',
+                                title: 'Paul Heinze',
+                                content: 'Paul Heinze is a Computer Science student at the <a href="https://www.hs-anhalt.de/en/start-page.html">Anhalt University of Applied Science</a> (Germany). He is a <a href="https://github.com/p-Heinze">regular contributor</a> to the Qanary framework and the Qanary component ecosystem.'
+                            },
                         ]}
                     </Block>
                     {/*<Features />*/}
