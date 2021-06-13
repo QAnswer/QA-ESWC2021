@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tutorial: Feedback and Train · QA Tutorial @ ESWC 2021</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Each time you ask a question the system generate interpretations and computes a confidence. We have seen the list of different interpretations in the answer object in the&lt;/p&gt;
-"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tutorial: Feedback and Train · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/"/><meta property="og:description" content="&lt;p&gt;Each time you ask a question the system generate interpretations and computes a confidence. We have seen the list of different interpretations in the answer object in the&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tutorial: Feedback and Train · QA Tutorial @ ESWC 2021"/><meta property="og:type" content="website"/><meta property="og:url" content="https://QAnswer.github.io/QA-ESWC2021/index.html"/><meta property="og:description" content="&lt;p&gt;Each time you ask a question the system generate interpretations and computes a confidence. We have seen the list of different interpretations in the answer object in the&lt;/p&gt;
 "/><meta property="og:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://QAnswer.github.io/QA-ESWC2021/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/QA-ESWC2021/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/QA-ESWC2021/css/main.css"/><script src="/QA-ESWC2021/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/QA-ESWC2021/"><img class="logo" src="/QA-ESWC2021/img/favicon.ico" alt="QA Tutorial @ ESWC 2021"/><h2 class="headerTitleWithLogo">QA Tutorial @ ESWC 2021</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/QA-ESWC2021/docs/doc0" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tutorial: Feedback and Train</h1></header><article><div><span><p>Each time you ask a question the system generate interpretations and computes a confidence. We have seen the list of different interpretations in the answer object in the
 previews call. The system believes the answer is correct if the confidence is bigger than 50% and wrong if it is lower than 50%.</p>
 <p>By using the feedback functionality the system can learn to choose the right interpretation
@@ -57,23 +57,122 @@ and correctly compute the confidence.</p>
 </code></pre>
 <p>the answer is &quot;Cocktail&quot;, which would correspond to the question &quot;What is a cocktail?&quot;. The right answer is given by the second ranked query which gives back things
 of type cocktail. We can tell the system that this is the right query by the following request:</p>
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-21-tab-22" class="nav-link active" data-group="group_21" data-tab="tab-group-21-content-22">cURL</div><div id="tab-group-21-tab-23" class="nav-link" data-group="group_21" data-tab="tab-group-21-content-23">Java</div><div id="tab-group-21-tab-24" class="nav-link" data-group="group_21" data-tab="tab-group-21-content-24">JavaScript</div></div><div class="tab-content"><div id="tab-group-21-content-22" class="tab-pane active" data-group="group_21" tabindex="-1"><div><span><pre><code class="hljs">curl -X POST \<br />  https://qanswer-core1.univ-st-etienne.fr/api/feedback/create \<br />  -H <span class="hljs-symbol">'Authorization</span>: Bearer eyJhbGciOiJIUzUxMiJ.................' \<br />  -H <span class="hljs-symbol">'Content</span>-<span class="hljs-keyword">Type</span>: application/json' \<br />  -d '{<br />  <span class="hljs-string">"correct"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"knowledgebase"</span>: [<span class="hljs-string">"cocktails"</span>],<br />  <span class="hljs-string">"language"</span>: [<span class="hljs-string">"en"</span>],<br />  <span class="hljs-string">"question"</span>: <span class="hljs-string">"Give me all cocktails."</span>,<br />  <span class="hljs-string">"questionId"</span>: -<span class="hljs-number">1</span>,<br />  <span class="hljs-string">"sparql"</span>: <span class="hljs-string">"SELECT DISTINCT ?s1 where { ?s1  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail&gt; . } limit 1000"</span>,<br />  <span class="hljs-string">"sparqlKB"</span>: <span class="hljs-string">"cocktails"</span>,<br />  <span class="hljs-string">"validated"</span>: <span class="hljs-literal">true</span><br />}'<br /></code></pre>
-</span></div></div><div id="tab-group-21-content-23" class="tab-pane" data-group="group_21" tabindex="-1"><div><span><pre><code class="hljs">OkHttpClient client = new OkHttpClient();<br /><br />MediaType mediaType = MediaType.parse(<span class="hljs-string">"application/json"</span>);<br />RequestBody body = RequestBody.create(mediaType, <span class="hljs-string">"{<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>correct<span class="hljs-subst">\"</span>: true,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>knowledgebase<span class="hljs-subst">\"</span>: [<span class="hljs-subst">\"</span>cocktails<span class="hljs-subst">\"</span>],<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>language<span class="hljs-subst">\"</span>: [<span class="hljs-subst">\"</span>en<span class="hljs-subst">\"</span>],<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>question<span class="hljs-subst">\"</span>: <span class="hljs-subst">\"</span>Give me all cocktails.<span class="hljs-subst">\"</span>,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>questionId<span class="hljs-subst">\"</span>: -1,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>sparql<span class="hljs-subst">\"</span>: <span class="hljs-subst">\"</span>SELECT DISTINCT ?s1 where { ?s1  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail&gt; . } limit 1000<span class="hljs-subst">\"</span>,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>sparqlKB<span class="hljs-subst">\"</span>: <span class="hljs-subst">\"</span>cocktails<span class="hljs-subst">\"</span>,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>validated<span class="hljs-subst">\"</span>: true<span class="hljs-subst">\n</span>}"</span>);<br />Request request = new Request.Builder()<br />  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/create"</span>)<br />  .post(body)<br />  .addHeader(<span class="hljs-string">"Content-Type"</span>, <span class="hljs-string">"application/json"</span>)<br />  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUzU......"</span>)<br />  .build();<br /><br />Response response = client.newCall(request).execute();<br /></code></pre>
-</span></div></div><div id="tab-group-21-content-24" class="tab-pane" data-group="group_21" tabindex="-1"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {<br />  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/create"</span>,<br />  <span class="hljs-string">"method"</span>: <span class="hljs-string">"POST"</span>,<br />  <span class="hljs-string">"headers"</span>: {<br />    <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json"</span>,<br />    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUzUx................."</span>,<br />  },<br />  <span class="hljs-string">"processData"</span>: <span class="hljs-literal">false</span>,<br />  <span class="hljs-string">"data"</span>: <span class="hljs-string">"{\n  \"correct\": true,\n  \"knowledgebase\": [\"cocktails\"],\n  \"language\": [\"en\"],\n  \"question\": \"Give me all cocktails.\",\n  \"questionId\": -1,\n  \"sparql\": \"SELECT DISTINCT ?s1 where { ?s1  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail&gt; . } limit 1000\",\n  \"sparqlKB\": \"cocktails\",\n  \"validated\": true\n}"</span><br />}<br /><br />$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{<br />  <span class="hljs-built_in">console</span>.log(response);<br />});<br /></code></pre>
-</span></div></div></div></div>
-<p>Note that the body contains a JSON object that specifies the knowledgebase, the language, the question and the correct query. The questionId is &quot;-1&quot; if the question is not in the training dataset yet. To overwrite a previews feedback you can specify the questionId.</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="22-tab" data-group="group_21" data-tab="tabpanel_22">cURL</div><div class="nav-link" id="23-tab" data-group="group_21" data-tab="tabpanel_23">Java</div><div class="nav-link" id="24-tab" data-group="group_21" data-tab="tabpanel_24">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_21" tabindex="-1" id="tabpanel_22"><div><span><pre><code class="hljs">curl -X POST \
+  https://qanswer-core1.univ-st-etienne.fr/api/feedback/create \
+  -H <span class="hljs-symbol">'Authorization</span>: Bearer eyJhbGciOiJIUzUxMiJ.................' \
+  -H <span class="hljs-symbol">'Content</span>-<span class="hljs-keyword">Type</span>: application/json' \
+  -d '{
+  <span class="hljs-string">"correct"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"knowledgebase"</span>: [<span class="hljs-string">"cocktails"</span>],
+  <span class="hljs-string">"language"</span>: [<span class="hljs-string">"en"</span>],
+  <span class="hljs-string">"question"</span>: <span class="hljs-string">"Give me all cocktails."</span>,
+  <span class="hljs-string">"questionId"</span>: -<span class="hljs-number">1</span>,
+  <span class="hljs-string">"sparql"</span>: <span class="hljs-string">"SELECT DISTINCT ?s1 where { ?s1  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail&gt; . } limit 1000"</span>,
+  <span class="hljs-string">"sparqlKB"</span>: <span class="hljs-string">"cocktails"</span>,
+  <span class="hljs-string">"validated"</span>: <span class="hljs-literal">true</span>
+}'
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_21" tabindex="-1" id="tabpanel_23"><div><span><pre><code class="hljs">OkHttpClient client = new OkHttpClient();
+
+MediaType mediaType = MediaType.parse(<span class="hljs-string">"application/json"</span>);
+RequestBody body = RequestBody.create(mediaType, <span class="hljs-string">"{<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>correct<span class="hljs-subst">\"</span>: true,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>knowledgebase<span class="hljs-subst">\"</span>: [<span class="hljs-subst">\"</span>cocktails<span class="hljs-subst">\"</span>],<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>language<span class="hljs-subst">\"</span>: [<span class="hljs-subst">\"</span>en<span class="hljs-subst">\"</span>],<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>question<span class="hljs-subst">\"</span>: <span class="hljs-subst">\"</span>Give me all cocktails.<span class="hljs-subst">\"</span>,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>questionId<span class="hljs-subst">\"</span>: -1,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>sparql<span class="hljs-subst">\"</span>: <span class="hljs-subst">\"</span>SELECT DISTINCT ?s1 where { ?s1  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail&gt; . } limit 1000<span class="hljs-subst">\"</span>,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>sparqlKB<span class="hljs-subst">\"</span>: <span class="hljs-subst">\"</span>cocktails<span class="hljs-subst">\"</span>,<span class="hljs-subst">\n</span>  <span class="hljs-subst">\"</span>validated<span class="hljs-subst">\"</span>: true<span class="hljs-subst">\n</span>}"</span>);
+Request request = new Request.Builder()
+  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/create"</span>)
+  .post(body)
+  .addHeader(<span class="hljs-string">"Content-Type"</span>, <span class="hljs-string">"application/json"</span>)
+  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUzU......"</span>)
+  .build();
+
+Response response = client.newCall(request).execute();
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_21" tabindex="-1" id="tabpanel_24"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/create"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"POST"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUzUx................."</span>,
+  },
+  <span class="hljs-string">"processData"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">"data"</span>: <span class="hljs-string">"{\n  \"correct\": true,\n  \"knowledgebase\": [\"cocktails\"],\n  \"language\": [\"en\"],\n  \"question\": \"Give me all cocktails.\",\n  \"questionId\": -1,\n  \"sparql\": \"SELECT DISTINCT ?s1 where { ?s1  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;  &lt;http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail&gt; . } limit 1000\",\n  \"sparqlKB\": \"cocktails\",\n  \"validated\": true\n}"</span>
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>Note that the body contains a JSON object that specifies the knowledgebase, the language, the question and the correct query. The questionId is &quot;-1&quot; if the question is not in the training dataset yet. To overwrite a previews feedback you can specify the questionId.</p>
 <p>After asking a set of questions, and by giving feedback you will have created a training set. A training set for the cocktail dataset can be downloaded
 <a href="/questions_cocktail.json">here</a>. It can be uploaded as follows:</p>
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-25-tab-26" class="nav-link active" data-group="group_25" data-tab="tab-group-25-content-26">cURL</div><div id="tab-group-25-tab-27" class="nav-link" data-group="group_25" data-tab="tab-group-25-content-27">Java</div><div id="tab-group-25-tab-28" class="nav-link" data-group="group_25" data-tab="tab-group-25-content-28">JavaScript</div></div><div class="tab-content"><div id="tab-group-25-content-26" class="tab-pane active" data-group="group_25" tabindex="-1"><div><span><pre><code class="hljs">curl -X POST \<br />  https://qanswer-core1.univ-st-etienne.fr/api/feedback/upload \<br />  -H <span class="hljs-string">'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDUiLCJ.......'</span> \<br />  -F <span class="hljs-type">json</span>=@/<span class="hljs-type">path</span>/<span class="hljs-keyword">to</span>/file/questions_cocktail.json<br /></code></pre>
-</span></div></div><div id="tab-group-25-content-27" class="tab-pane" data-group="group_25" tabindex="-1"><div><span><pre><code class="hljs">OkHttpClient client = <span class="hljs-keyword">new</span> <span class="hljs-constructor">OkHttpClient()</span>;<br /><br />MediaType mediaType = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MediaType</span>.</span></span>parse(<span class="hljs-string">"multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"</span>);<br />RequestBody body = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">RequestBody</span>.</span></span>create(mediaType, <span class="hljs-string">"------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"json\"; filename=\"questions_cocktail.json\"\r\nContent-Type: application/json\r\n\r\n\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--"</span>);<br />Request request = <span class="hljs-keyword">new</span> Request.<span class="hljs-constructor">Builder()</span><br />  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/upload"</span>)<br />  .post(body)<br />  .add<span class="hljs-constructor">Header(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxM......."</span>)</span><br />  .build<span class="hljs-literal">()</span>;<br /><br />Response response = client.<span class="hljs-keyword">new</span><span class="hljs-constructor">Call(<span class="hljs-params">request</span>)</span>.execute<span class="hljs-literal">()</span>;<br /></code></pre>
-</span></div></div><div id="tab-group-25-content-28" class="tab-pane" data-group="group_25" tabindex="-1"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> form = <span class="hljs-keyword">new</span> FormData();<br />form.append(<span class="hljs-string">"json"</span>, <span class="hljs-string">"/Users/Dennis/Downloads/questions_cocktail.json"</span>);<br /><br /><span class="hljs-keyword">var</span> settings = {<br />  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/upload"</span>,<br />  <span class="hljs-string">"method"</span>: <span class="hljs-string">"POST"</span>,<br />  <span class="hljs-string">"headers"</span>: {<br />    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUz...................."</span>,<br />  },<br />  <span class="hljs-string">"processData"</span>: <span class="hljs-literal">false</span>,<br />  <span class="hljs-string">"contentType"</span>: <span class="hljs-literal">false</span>,<br />  <span class="hljs-string">"mimeType"</span>: <span class="hljs-string">"multipart/form-data"</span>,<br />  <span class="hljs-string">"data"</span>: form<br />}<br /><br />$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{<br />  <span class="hljs-built_in">console</span>.log(response);<br />});<br /></code></pre>
-</span></div></div></div></div>
-<p>By calling the following API you have an overview of how the system performs on the questions you gave feedback:</p>
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-29-tab-30" class="nav-link active" data-group="group_29" data-tab="tab-group-29-content-30">cURL</div><div id="tab-group-29-tab-31" class="nav-link" data-group="group_29" data-tab="tab-group-29-content-31">Java</div><div id="tab-group-29-tab-32" class="nav-link" data-group="group_29" data-tab="tab-group-29-content-32">JavaScript</div></div><div class="tab-content"><div id="tab-group-29-content-30" class="tab-pane active" data-group="group_29" tabindex="-1"><div><span><pre><code class="hljs"><span class="hljs-attr">curl</span> <span class="hljs-string">-X GET \<br />  https://qanswer-core1.univ-st-etienne.fr/api/feedback/evaluate \<br />  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi.....................' \<br /></span></code></pre>
-</span></div></div><div id="tab-group-29-content-31" class="tab-pane" data-group="group_29" tabindex="-1"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();<br /><br />Request request = new Request.Builder()<br />  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/evaluate"</span>)<br />  .<span class="hljs-builtin-name">get</span>()<br />  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxMi....."</span>)<br />  .build();<br /><br />Response response = client.newCall(request).execute();<br /></code></pre>
-</span></div></div><div id="tab-group-29-content-32" class="tab-pane" data-group="group_29" tabindex="-1"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {<br />  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/evaluate"</span>,<br />  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,<br />  <span class="hljs-string">"headers"</span>: {<br />    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUz....."</span>,<br />  }<br />}<br /><br />$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{<br />  <span class="hljs-built_in">console</span>.log(response);<br />});<br /></code></pre>
-</span></div></div></div></div>
-<p>The response looks as follows:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="26-tab" data-group="group_25" data-tab="tabpanel_26">cURL</div><div class="nav-link" id="27-tab" data-group="group_25" data-tab="tabpanel_27">Java</div><div class="nav-link" id="28-tab" data-group="group_25" data-tab="tabpanel_28">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_25" tabindex="-1" id="tabpanel_26"><div><span><pre><code class="hljs">curl -X POST \
+  https://qanswer-core1.univ-st-etienne.fr/api/feedback/upload \
+  -H <span class="hljs-string">'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDUiLCJ.......'</span> \
+  -F <span class="hljs-type">json</span>=@/<span class="hljs-type">path</span>/<span class="hljs-keyword">to</span>/file/questions_cocktail.json
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_25" tabindex="-1" id="tabpanel_27"><div><span><pre><code class="hljs">OkHttpClient client = <span class="hljs-keyword">new</span> <span class="hljs-constructor">OkHttpClient()</span>;
+
+MediaType mediaType = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MediaType</span>.</span></span>parse(<span class="hljs-string">"multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"</span>);
+RequestBody body = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">RequestBody</span>.</span></span>create(mediaType, <span class="hljs-string">"------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"json\"; filename=\"questions_cocktail.json\"\r\nContent-Type: application/json\r\n\r\n\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--"</span>);
+Request request = <span class="hljs-keyword">new</span> Request.<span class="hljs-constructor">Builder()</span>
+  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/upload"</span>)
+  .post(body)
+  .add<span class="hljs-constructor">Header(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxM......."</span>)</span>
+  .build<span class="hljs-literal">()</span>;
+
+Response response = client.<span class="hljs-keyword">new</span><span class="hljs-constructor">Call(<span class="hljs-params">request</span>)</span>.execute<span class="hljs-literal">()</span>;
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_25" tabindex="-1" id="tabpanel_28"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> form = <span class="hljs-keyword">new</span> FormData();
+form.append(<span class="hljs-string">"json"</span>, <span class="hljs-string">"/Users/Dennis/Downloads/questions_cocktail.json"</span>);
+
+<span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/upload"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"POST"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUz...................."</span>,
+  },
+  <span class="hljs-string">"processData"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">"contentType"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">"mimeType"</span>: <span class="hljs-string">"multipart/form-data"</span>,
+  <span class="hljs-string">"data"</span>: form
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>By calling the following API you have an overview of how the system performs on the questions you gave feedback:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="30-tab" data-group="group_29" data-tab="tabpanel_30">cURL</div><div class="nav-link" id="31-tab" data-group="group_29" data-tab="tabpanel_31">Java</div><div class="nav-link" id="32-tab" data-group="group_29" data-tab="tabpanel_32">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_29" tabindex="-1" id="tabpanel_30"><div><span><pre><code class="hljs"><span class="hljs-attr">curl</span> <span class="hljs-string">-X GET \
+  https://qanswer-core1.univ-st-etienne.fr/api/feedback/evaluate \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi.....................' \
+</span></code></pre>
+</span></div></div><div class="tab-pane" data-group="group_29" tabindex="-1" id="tabpanel_31"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/evaluate"</span>)
+  .<span class="hljs-builtin-name">get</span>()
+  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxMi....."</span>)
+  .build();
+
+Response response = client.newCall(request).execute();
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_29" tabindex="-1" id="tabpanel_32"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/evaluate"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUz....."</span>,
+  }
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>The response looks as follows:</p>
 <pre><code class="hljs">{
     <span class="hljs-attr">"confidence"</span>: {
         <span class="hljs-attr">"confusionMatrix"</span>: {
@@ -132,11 +231,35 @@ of type cocktail. We can tell the system that this is the right query by the fol
 }
 </code></pre>
 <p>After calling the train API:</p>
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-33-tab-34" class="nav-link active" data-group="group_33" data-tab="tab-group-33-content-34">cURL</div><div id="tab-group-33-tab-35" class="nav-link" data-group="group_33" data-tab="tab-group-33-content-35">Java</div><div id="tab-group-33-tab-36" class="nav-link" data-group="group_33" data-tab="tab-group-33-content-36">JavaScript</div></div><div class="tab-content"><div id="tab-group-33-content-34" class="tab-pane active" data-group="group_33" tabindex="-1"><div><span><pre><code class="hljs"><span class="hljs-attr">curl</span> <span class="hljs-string">-X GET \<br />  https://qanswer-core1.univ-st-etienne.fr/api/feedback/train \<br />  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi.....' \<br /></span></code></pre>
-</span></div></div><div id="tab-group-33-content-35" class="tab-pane" data-group="group_33" tabindex="-1"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();<br /><br />Request request = new Request.Builder()<br />  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/train"</span>)<br />  .<span class="hljs-builtin-name">get</span>()<br />  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUz....."</span>)<br />  .build();<br /><br />Response response = client.newCall(request).execute();<br /></code></pre>
-</span></div></div><div id="tab-group-33-content-36" class="tab-pane" data-group="group_33" tabindex="-1"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {<br />  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,<br />  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/train"</span>,<br />  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,<br />  <span class="hljs-string">"headers"</span>: {<br />    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxMi....."</span>,<br />  }<br />}<br /><br />$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{<br />  <span class="hljs-built_in">console</span>.log(response);<br />});<br /></code></pre>
-</span></div></div></div></div>
-<p>the system will create a model that adapts to your dataset:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="34-tab" data-group="group_33" data-tab="tabpanel_34">cURL</div><div class="nav-link" id="35-tab" data-group="group_33" data-tab="tabpanel_35">Java</div><div class="nav-link" id="36-tab" data-group="group_33" data-tab="tabpanel_36">JavaScript</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_33" tabindex="-1" id="tabpanel_34"><div><span><pre><code class="hljs"><span class="hljs-attr">curl</span> <span class="hljs-string">-X GET \
+  https://qanswer-core1.univ-st-etienne.fr/api/feedback/train \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi.....' \
+</span></code></pre>
+</span></div></div><div class="tab-pane" data-group="group_33" tabindex="-1" id="tabpanel_35"><div><span><pre><code class="hljs">OkHttpClient<span class="hljs-built_in"> client </span>= new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url(<span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/train"</span>)
+  .<span class="hljs-builtin-name">get</span>()
+  .addHeader(<span class="hljs-string">"Authorization"</span>, <span class="hljs-string">"Bearer eyJhbGciOiJIUz....."</span>)
+  .build();
+
+Response response = client.newCall(request).execute();
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_33" tabindex="-1" id="tabpanel_36"><div><span><pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> settings = {
+  <span class="hljs-string">"async"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"crossDomain"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://qanswer-core1.univ-st-etienne.fr/api/feedback/train"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"headers"</span>: {
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Bearer eyJhbGciOiJIUzUxMi....."</span>,
+  }
+}
+
+$.ajax(settings).done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+});
+</code></pre>
+</span></div></div></div></div><div><span><p>the system will create a model that adapts to your dataset:</p>
 <pre><code class="hljs">{
     <span class="hljs-attr">"confidence"</span>: {
         <span class="hljs-attr">"confusionMatrix"</span>: {
